@@ -77,22 +77,36 @@ export function HeroSection() {
           className="pointer-events-auto flex flex-wrap gap-3 font-bold opacity-0 animate-fade-up"
           style={{ animationDelay: "0.7s" }}
         >
-          <button className="cursor-pointer rounded-sm bg-primary px-6 py-3 text-sm text-primary-foreground transition-all hover:brightness-110 active:scale-[0.97] md:px-8 md:py-4">
-            <a href="#contact">{t("btn_call")}</a>
-          </button>
-          <button className="cursor-pointer rounded-sm bg-foreground px-6 py-3 text-sm text-background transition-all hover:brightness-125 active:scale-[0.97] dark:hover:brightness-90 md:px-8 md:py-4">
-            <a href="#portfolio">{t("btn_work")}</a>
-          </button>
+          <a
+            href="#packages"
+            className="inline-flex items-center justify-center cursor-pointer rounded-sm bg-primary px-6 py-3 text-sm text-primary-foreground transition-all hover:brightness-110 active:scale-[0.97] md:px-8 md:py-4"
+          >
+            {t("btn_packages")}
+          </a>
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center cursor-pointer rounded-sm bg-foreground px-6 py-3 text-sm text-background transition-all hover:brightness-125 active:scale-[0.97] dark:hover:brightness-90 md:px-8 md:py-4"
+          >
+            {t("btn_tell_project")}
+          </a>
         </div>
 
-        <p
-          className={`mt-4 text-xs font-light opacity-0 animate-fade-up md:mt-6 ${
-            isLight ? "text-foreground/65" : "text-muted-foreground/60"
-          }`}
+        <div
+          className="mt-4 flex flex-wrap items-center gap-3 opacity-0 animate-fade-up md:mt-6"
           style={{ animationDelay: "0.85s" }}
         >
-          {t("trust_line")}
-        </p>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+            {t("istqb_badge")}
+          </span>
+          <p
+            className={`text-xs font-light ${
+              isLight ? "text-foreground/65" : "text-muted-foreground/60"
+            }`}
+          >
+            {t("trust_line")}
+          </p>
+        </div>
       </div>
     </section>
   )

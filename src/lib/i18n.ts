@@ -1,12 +1,20 @@
 export const I18N = {
   en: {
     nav_why: "Why Me", nav_exp: "Experience", nav_svc: "Services", nav_port: "Portfolio", nav_skills: "Skills", nav_faq: "FAQ", nav_hire: "Hire Me",
-    h1_1: "ZERO", h1_2: "ESCAPES",
-    hp_subtitle: "Zero bugs escape to production.",
-    hp_desc: "ISTQB Certified QA Automation Architect with 5+ years delivering enterprise-grade test frameworks. Playwright + TypeScript + CI/CD. 1,500+ test scenarios shipped securely and swiftly.",
-    btn_call: "Book a Call", btn_work: "My Works",
-    trust_line: "Trusted QA Partner. Available Worldwide Remote. 1.5k+ Tests Deployed.",
     
+    // Hero
+    h1_1: "Ship with", h1_2: "confidence.",
+    hp_subtitle: "End-to-end test automation, performance benchmarks & CI/CD integration.",
+    hp_desc: "You write the features, we protect quality. Fewer regressions, accelerated release cycles, and dependable production deployments.",
+    btn_call: "Book a Call", btn_work: "My Works",
+    btn_packages: "View Packages", btn_tell_project: "Discuss My Project",
+    trust_line: "ISTQB Certified QA Partner. 1,500+ test scenarios shipped worldwide.",
+    
+    // Authority & ISTQB
+    istqb_badge: "ISTQB Certified Tester, Foundation Level",
+    authority_text: "From indie MVPs to complex enterprise architectures, we engineer sustainable quality assurance tailored to any project scale.",
+    
+    // Why Zero Escapes
     why_lbl: "Why Zero Escapes", why_title: "Your bugs stop here.", why_sub: "Here's why clients choose me.", why_desc: "I'm not just a QA engineer — I'm a strategic quality partner who treats your codebase like my own product.",
     w1_t: "Framework Architect, Not Script Writer", w1_d: "Scalable POM architectures with Playwright + TypeScript. Greenfield to legacy rescue — maintainable, not brittle.",
     w2_t: "CI/CD Native — Shift-Left Expert", w2_d: "Testing in your pipeline from day one. Every PR gets a full regression run before merge.",
@@ -15,6 +23,54 @@ export const I18N = {
     w5_t: "Agile-First, Sprint-Aligned", w5_d: "Standups, story refinement, BDD/Gherkin acceptance criteria. Tests become living documentation.",
     w6_t: "Management-Ready Reporting", w6_d: "Defect trends, release readiness scorecards, exec dashboards — for engineers and C-suite.",
     
+    // Process (4 Steps)
+    proc_lbl: "Process", proc_title: "How we work", proc_sub: "from discovery to dependable delivery.",
+    proc1_t: "01 Discovery & Audit", proc1_d: "Analyzing tech stack, existing code, test readiness, and critical user journeys.",
+    proc2_t: "02 Test Strategy", proc2_d: "Defining coverage matrix, architecture, data fixtures, and CI execution schedule.",
+    proc3_t: "03 Automation & CI/CD", proc3_d: "Building maintainable tests, parallel execution, and PR validation gates.",
+    proc4_t: "04 Handover & Support", proc4_d: "Living documentation, team onboarding, executive metrics, and dedicated support.",
+    
+    // Packages
+    pkg_lbl: "Service Packages", pkg_title: "Transparent Quality Plans", pkg_sub: "Tailored for solo builders, fast startups, and enterprise teams.",
+    pkg_popular: "Most Popular", pkg_quote: "Get a Quote", pkg_cta: "Get Started",
+    pkg_response_time: "First response & discovery within 24 hours",
+    
+    pkg1_name: "Indie / Individual",
+    pkg1_target: "For Indie hackers, solopreneurs & MVP creators",
+    pkg1_timeline: "1–2 weeks",
+    pkg1_model: "Fixed scope or milestone-based",
+    pkg1_f1: "Core UI & critical user journey tests",
+    pkg1_f2: "Essential API endpoint validations",
+    pkg1_f3: "Fast defect discovery report",
+    pkg1_f4: "Playwright or Cypress lightweight setup",
+    pkg1_f5: "Local run guides & execution scripts",
+    pkg1_f6: "Post-delivery handoff session",
+    
+    pkg2_name: "Startup / Team",
+    pkg2_target: "For fast-shipping teams needing stable release gates",
+    pkg2_timeline: "3–5 weeks",
+    pkg2_model: "Sprint-aligned or dedicated project",
+    pkg2_f1: "Scalable POM framework (Playwright + TypeScript)",
+    pkg2_f2: "GitHub Actions CI/CD automated test gates",
+    pkg2_f3: "Full regression suite for critical user flows",
+    pkg2_f4: "API & DB integration validation",
+    pkg2_f5: "Allure / HTML artifact reporting",
+    pkg2_f6: "Team onboarding, code walk-through & docs",
+    pkg2_f7: "30-day post-delivery technical support",
+    
+    pkg3_name: "Enterprise / Corporate",
+    pkg3_target: "For complex architectures, multi-team environments & compliance",
+    pkg3_timeline: "Ongoing or 6+ weeks",
+    pkg3_model: "Dedicated retainer or enterprise contract",
+    pkg3_f1: "Enterprise QA framework & shift-left strategy",
+    pkg3_f2: "Cross-browser & cross-platform coverage",
+    pkg3_f3: "Performance & load testing (JMeter / k6)",
+    pkg3_f4: "Multi-pipeline CI/CD (GitHub Actions / Jenkins)",
+    pkg3_f5: "Executive defect scorecards & C-suite metrics",
+    pkg3_f6: "Custom SLA & priority issue resolution",
+    pkg3_f7: "Dedicated architectural mentorship",
+    
+    // Professional Experience
     exp_lbl: "Professional Experience", exp_title: "5+ years,", exp_sub: "4 countries, zero escapes.",
     exp1_role: "QA Specialist & Technical Project Manager at THY · F4E",
     exp1_date: "01/2025 – Present",
@@ -52,12 +108,14 @@ export const I18N = {
     exp_semih_b1: "Completed end-to-end testing lifecycle for Salesroom (Pager-delta).",
     exp_semih_b2: "Delivered comprehensive test reports covering manual and automation tests.",
     
+    // Services
     svc_lbl: "Services", svc_title: "What I deliver", svc_sub: "end-to-end.",
     svc1_t: "QA Framework Build", svc1_d: "Full Playwright + TypeScript with POM, custom commands, CI/CD integration and team onboarding docs.",
     svc2_t: "Legacy Framework Rescue", svc2_d: "Audit, refactor, modernize — from flaky Selenium to stable Playwright. Eliminate flakiness, restore confidence.",
     svc3_t: "Mobile Automation", svc3_d: "iOS + Android E2E suites with Appium. Real device testing, parallel execution, CI integration.",
     svc4_t: "API Testing & Validation", svc4_d: "REST/GraphQL suites with Postman + Newman in CI. Schema validation and JMeter benchmarks.",
     
+    // Portfolio
     port_lbl: "Case Studies", port_title: "Shipped work.", port_sub: "Measurable results.",
     port_c1_t: "Feedback4E — SaaS Platform",
     port_l1_1: "Greenfield framework built from scratch — POM architecture, custom fixtures",
@@ -70,34 +128,57 @@ export const I18N = {
     port_l3_1: "End-to-end testing cycle implemented from scratch",
     port_l3_2: "Delivered comprehensive automation and manual test reports",
     
-    sk_lbl: "Skills & Stack", sk_title: "Tools that make", sk_sub: "zero escapes possible.",
+    // Skills
+    sk_lbl: "Skills & Stack", sk_title: "Technologies I Work With", sk_sub: "Verified tools and battle-tested frameworks.",
+    sk_core_title: "Core Expertise (Daily Focus)",
+    sk_exp_title: "Verified Project Experience",
     
+    // Testimonials
     test_lbl: "Testimonials", test_title: "What clients say",
-    test1_t: "Mustafa completely transformed our QA process. From manual testing chaos to a fully automated pipeline in 6 weeks. Production incidents dropped to near zero.", test1_r: "CTO · SaaS Startup, Berlin",
+    test1_t: "Mustafa completely transformed our QA process. From manual testing chaos to a fully automated pipeline in 6 weeks. Production incidents dropped significantly.", test1_r: "CTO · SaaS Startup, Berlin",
     test2_t: "The framework Mustafa built is something our in-house team couldn't have done in months. Maintainable, fast, and CI integration means we catch bugs before staging.", test2_r: "Engineering Lead · E-Commerce, Istanbul",
     test3_t: "Exceptional technical depth combined with excellent communication. Reports that even our CEO could understand. Highly recommend for any serious QA engagement.", test3_r: "VP Product · FinTech, London",
     test4_t: "Mustafa was amazing to work with. Super detail oriented and extremely fast.", test4_r: "Semih Ö. · Technical Design Leader & Project Manager",
     
+    // FAQ
     faq_lbl: "FAQ", faq_title: "Common questions",
-    faq1_q: "How long does it take to build a framework?", faq1_a: "3–5 weeks for a mid-size SaaS with CI/CD. Includes architecture, core utilities, first 100 tests, and documentation.",
-    faq2_q: "Do you work remotely?", faq2_a: "100% remote, worldwide. Delivered in Turkey, UAE, USA and UK. Based in Ankara.",
-    faq3_q: "What if our team has never automated before?", faq3_a: "Perfect starting point. I include complete onboarding — docs, training, and 30-day post-delivery support.",
-    faq4_q: "Do you use AI tools?", faq4_a: "Yes — Claude Code, Codex, and Gemini to accelerate test creation and reporting. Faster delivery, same quality.",
+    faq1_q: "How long does a framework or project take?", faq1_a: "Indie packages usually take 1–2 weeks. A comprehensive Startup test automation framework typically takes 3–5 weeks including CI/CD and documentation.",
+    faq2_q: "How do budgeting and payment models work?", faq2_a: "We offer transparent milestone-based or fixed-scope proposals tailored to your requirements, ensuring zero unexpected fees.",
+    faq3_q: "What if our project has no existing tests at all?", faq3_a: "That is a perfect starting point. We map out critical business flows and build a clean, sustainable architecture from day one.",
+    faq4_q: "Do you sign Non-Disclosure Agreements (NDA)?", faq4_a: "Absolutely. All codebase access and project conversations are kept strictly confidential under mutual NDA before kickoff.",
+    faq5_q: "Which test tools and frameworks do you use?", faq5_a: "Our core focus is Playwright + TypeScript and GitHub Actions CI/CD. We also leverage proven project experience in Selenium, Appium, Postman, Rest Assured, and JMeter.",
+    faq6_q: "What is your working model and communication rhythm?", faq6_a: "100% remote worldwide. We align via Slack/Teams, asynchronous sprint updates, and weekly progress demos. First inquiries are answered within 24 hours.",
     
-    cta_title: "Ready for", cta_title_em: "zero escapes?", cta_p: "Fill out the form with your project details or just say hello. 30-minute discovery call, no commitment.",
-    guar_1: "Responds within 4 hours", guar_2: "Worldwide Remote",
-    form_name: "Your Name", form_email: "Email Address", form_company: "Company Name (Optional)", form_message: "Message", form_name_ph: "Mustafa Sağıroğlu", form_email_ph: "name@company.com", form_message_ph: "Describe your project, timeline, and any specific requirements...", btn_submit: "Submit Request",
+    // Contact & CTA
+    cta_title: "Ready to ship with", cta_title_em: "confidence?", cta_p: "Fill out the form with your project details or select a package. 30-minute discovery call, no commitment.",
+    guar_1: "First response within 24 hours", guar_2: "Worldwide Remote",
+    form_type_lbl: "Project Type", form_type_indie: "Indie / Individual Project", form_type_b2b: "Company / Team Project",
+    form_pkg_lbl: "Interested Package", form_pkg_indie: "Indie / Individual", form_pkg_startup: "Startup / Team", form_pkg_enterprise: "Enterprise / Corporate", form_pkg_custom: "Custom Scope",
+    form_name: "Your Name", form_email: "Email Address", form_company: "Company Name (Optional)", form_message: "Message",
+    form_name_ph: "Mustafa Sağıroğlu", form_email_ph: "name@company.com", form_message_ph: "Describe your product, current test status, timeline, and goals...",
+    form_consent: "I agree to the processing of my contact details for project inquiry under KVKK/GDPR.",
+    contact_email_direct: "Direct Inquiries: hello@zeroescapes.dev",
+    btn_submit: "Submit Request",
     
     footer_copy: "QA Automation Architect · 5+ years · ISTQB Certified · Worldwide remote."
   },
+  
   tr: {
     nav_why: "Neden Ben", nav_exp: "Deneyim", nav_svc: "Hizmetler", nav_port: "Portföy", nav_skills: "Yetenekler", nav_faq: "SSS", nav_hire: "Görüşelim",
-    h1_1: "SIFIR", h1_2: "HATA",
-    hp_subtitle: "Hiçbir hata canlıya sızamaz.",
-    hp_desc: "5+ yıl deneyimli ISTQB Sertifikalı QA Otomasyon Mimarı. Playwright + TypeScript + CI/CD. 1.500+ otonom test senaryosu teslim edildi.",
-    btn_call: "Görüşme Ayarla", btn_work: "Projelerim",
-    trust_line: "Güvenilir QA Ortağınız. Tüm Dünyaya Uzaktan Destek. 1.5k+ Test.",
     
+    // Hero
+    h1_1: "Güvenle", h1_2: "yayına çıkın.",
+    hp_subtitle: "Uçtan uca test otomasyonu, performans testleri ve CI/CD entegrasyonu.",
+    hp_desc: "Siz yeni özellikler geliştirin, kaliteyi biz güvence altına alalım. Daha az regresyon, daha hızlı sürümler, güvenle deploy.",
+    btn_call: "Görüşme Ayarla", btn_work: "Projelerim",
+    btn_packages: "Paketleri İncele", btn_tell_project: "Projemi Anlatmak İstiyorum",
+    trust_line: "ISTQB Sertifikalı QA Ortağınız. Dünya genelinde 1.500+ test senaryosu.",
+    
+    // Authority & ISTQB
+    istqb_badge: "ISTQB Certified Tester, Foundation Level",
+    authority_text: "Hobi projelerinden karmaşık kurumsal mimarilere kadar her ölçekteki projeye uygun, sürdürülebilir kalite güvence stratejileri tasarlıyoruz.",
+    
+    // Why Zero Escapes
     why_lbl: "Neden Zero Escapes", why_title: "Hatalar burada biter.", why_sub: "Müşterilerin beni seçme sebebi.", why_desc: "Sadece bir QA mühendisi değilim — kod tabanınızı kendi ürünüm gibi ele alan stratejik bir kalite ortağıyım.",
     w1_t: "Test Mimarı, Senaryo Yazarı Değil", w1_d: "Playwright + TypeScript ile ölçeklenebilir POM mimarileri. Sıfırdan veya mevcut sistemi iyileştirme.",
     w2_t: "CI/CD Uzmanı — Shift-Left", w2_d: "Testleri ilk günden pipeline'a entegre ederim. Her PR (kod gönderimi) öncesi tam regresyon koşulur.",
@@ -106,6 +187,54 @@ export const I18N = {
     w5_t: "Agile ve Sprint Uyumlu", w5_d: "Standup'lar, BDD/Gherkin kabul kriterleri. Testler yaşayan bir dokümantasyona dönüşür.",
     w6_t: "Yönetime Hazır Raporlama", w6_d: "Hata trendleri, sürüm hazırbulunuşluk karneleri — mühendisler ve yöneticiler için Allure dashboard'ları.",
     
+    // Process (4 Steps)
+    proc_lbl: "Süreç", proc_title: "Nasıl Çalışıyoruz", proc_sub: "Keşiften güvenli ve otomatik sürümlere 4 adım.",
+    proc1_t: "01 Keşif ve Analiz", proc1_d: "Teknoloji yığını, mevcut kod, test hazırlığı ve kritik kullanıcı akışlarının analizi.",
+    proc2_t: "02 Test Stratejisi", proc2_d: "Test kapsam matrisi, mimari şablonlar, test verileri ve CI koşum takviminin belirlenmesi.",
+    proc3_t: "03 Otomasyon ve CI/CD", proc3_d: "Sürdürülebilir testlerin inşası, paralel koşum ve PR kalite kapılarının kurulumu.",
+    proc4_t: "04 Raporlama, Devir & Destek", proc4_d: "Yaşayan dokümantasyon, ekip eğitimi, yönetici metrikleri ve devam eden teknik destek.",
+    
+    // Packages
+    pkg_lbl: "Hizmet Paketleri", pkg_title: "Şeffaf Kalite Paketleri", pkg_sub: "Bireysel geliştiriciler, büyüyen startup'lar ve kurumsal ekipler için.",
+    pkg_popular: "En Popüler", pkg_quote: "Teklif Alın", pkg_cta: "Hemen Başla",
+    pkg_response_time: "24 saat içinde ilk keşif & yanıt süresi",
+    
+    pkg1_name: "Indie / Bireysel",
+    pkg1_target: "Indie hacker'lar, solo geliştiriciler ve MVP projeleri için",
+    pkg1_timeline: "1–2 hafta",
+    pkg1_model: "Sabit kapsam veya aşama bazlı",
+    pkg1_f1: "Temel UI ve kritik kullanıcı akış testleri",
+    pkg1_f2: "Temel API endpoint doğrulamaları",
+    pkg1_f3: "Hızlı hata tespit ve önceliklendirme raporu",
+    pkg1_f4: "Playwright veya Cypress hafif kurulumu",
+    pkg1_f5: "Yerel çalıştırma rehberi ve test betikleri",
+    pkg1_f6: "Teslimat sonrası kısa devir oturumu",
+    
+    pkg2_name: "Startup / Ekip",
+    pkg2_target: "Hızlı release çıkan, test otomasyonuna ihtiyaç duyan ekipler için",
+    pkg2_timeline: "3–5 hafta",
+    pkg2_model: "Sprint uyumlu veya proje bazlı",
+    pkg2_f1: "Ölçeklenebilir POM mimarisi (Playwright + TypeScript)",
+    pkg2_f2: "GitHub Actions CI/CD otomatik test kapıları",
+    pkg2_f3: "Kritik kullanıcı akışları için tam regresyon seti",
+    pkg2_f4: "API ve veri tabanı entegrasyon doğrulama",
+    pkg2_f5: "Allure ve detaylı test raporlama sistemi",
+    pkg2_f6: "Ekip eğitimi, kod inceleme oturumu ve dokümantasyon",
+    pkg2_f7: "Teslimat sonrası 30 gün teknik destek",
+    
+    pkg3_name: "Kurumsal / B2B",
+    pkg3_target: "Karmaşık mimariler, çoklu ekipler ve yüksek ölçekli sistemler için",
+    pkg3_timeline: "Sürekli danışmanlık veya 6+ hafta",
+    pkg3_model: "Özel retainer veya kurumsal sözleşme",
+    pkg3_f1: "Kurumsal QA mimarisi ve shift-left stratejisi",
+    pkg3_f2: "Çoklu tarayıcı ve platform desteği",
+    pkg3_f3: "Performans ve yük testleri (JMeter)",
+    pkg3_f4: "Çoklu pipeline CI/CD (GitHub Actions / Jenkins)",
+    pkg3_f5: "Yönetici hata trendleri ve C-suite metrikleri",
+    pkg3_f6: "Özel SLA ve öncelikli müdahale garantisi",
+    pkg3_f7: "Düzenli mimari danışmanlık ve mentorluk",
+    
+    // Professional Experience
     exp_lbl: "İş Deneyimi", exp_title: "5+ yıl,", exp_sub: "4 ülke, sıfır canlı hatası.",
     exp1_role: "QA Uzmanı & THY Teknik Proje Yöneticisi · F4E",
     exp1_date: "01/2025 – Günümüz",
@@ -143,12 +272,14 @@ export const I18N = {
     exp_semih_b1: "Salesroom (Pager-delta) için uçtan uca test döngüsünü tamamladım.",
     exp_semih_b2: "Manuel ve otomasyon testlerini kapsayan kapsamlı test raporları sundum.",
     
+    // Services
     svc_lbl: "Hizmetler", svc_title: "Uçtan uca", svc_sub: "ne teslim ediyorum.",
     svc1_t: "QA Altyapı Kurulumu", svc1_d: "POM, özel komutlar, CI/CD entegrasyonu ve ekip eğitim dokümanlarıyla tam Playwright + TypeScript altyapısı.",
     svc2_t: "Eski Sistem Kurtarma (Refactor)", svc2_d: "Denetim, yeniden yazım, modernizasyon — dengesiz Selenium'dan kararlı Playwright'a geçiş.",
     svc3_t: "Mobil Otomasyon", svc3_d: "Appium ile iOS + Android E2E setleri. Gerçek cihaz testleri, paralel çalışma, CI entegrasyonu.",
     svc4_t: "API Testi ve Doğrulama", svc4_d: "CI üzerinde Postman + Newman ile REST/GraphQL setleri. Şema doğrulaması ve JMeter metrikleri.",
     
+    // Portfolio
     port_lbl: "Projeler", port_title: "Tamamlanan İşler.", port_sub: "Ölçülebilir sonuçlar.",
     port_c1_t: "Feedback4E — SaaS Platformu",
     port_l1_1: "Sıfırdan inşa edilen yeni altyapı — POM mimarisi, özel fikstürler, role dayalı kullanıcılar",
@@ -161,34 +292,58 @@ export const I18N = {
     port_l3_1: "Sıfırdan uygulanan uçtan uca test döngüsü",
     port_l3_2: "Kapsamlı otomasyon ve manuel test raporları teslim edildi",
     
-    sk_lbl: "Beceriler", sk_title: "Sıfır kaçışı", sk_sub: "sağlayan araçlar.",
+    // Skills
+    sk_lbl: "Beceriler", sk_title: "Çalıştığım Teknolojiler", sk_sub: "Doğrulanmış araçlar ve sahada test edilmiş altyapılar.",
+    sk_core_title: "Çekirdek Uzmanlık (Günlük Odak)",
+    sk_exp_title: "Doğrulanmış Proje Deneyimi",
     
+    // Testimonials
     test_lbl: "Referanslar", test_title: "Müşteriler ne diyor",
-    test1_t: "Mustafa QA sürecimizi tamamen dönüştürdü. 6 hafta içinde manuel test kaosundan tam otomatik bir pipeline'a geçtik. Üretim hataları neredeyse sıfıra düştü.", test1_r: "CTO · SaaS Startup, Berlin",
+    test1_t: "Mustafa QA sürecimizi tamamen dönüştürdü. 6 hafta içinde manuel test kaosundan tam otomatik bir pipeline'a geçtik. Üretim hataları belirgin şekilde azaldı.", test1_r: "CTO · SaaS Startup, Berlin",
     test2_t: "Mustafa'nın kurduğu altyapı kurum içi ekibimizin aylarca yapamayacağı bir şeydi. Bakımı kolay, hızlı ve CI entegrasyonu sayesinde hataları canlıdan önce yakalıyoruz.", test2_r: "Mühendislik Lideri · E-Ticaret, İstanbul",
     test3_t: "Mükemmel iletişimle birleşen olağanüstü teknik derinlik. CEO'muzun bile anlayabileceği raporlar sunuyor. Ciddi bir QA çalışması için kesinlikle tavsiye ederim.", test3_r: "Ürün Yöneticisi · FinTech, Londra",
     test4_t: "Mustafa ile çalışmak harikaydı. Detaylara süper odaklı ve son derece hızlı.", test4_r: "Semih Ö. · Technical Design Leader & Project Manager",
     
+    // FAQ
     faq_lbl: "SSS", faq_title: "Sık sorulan sorular",
-    faq1_q: "Altyapı kurulumu ne kadar sürer?", faq1_a: "CI/CD içeren orta ölçekli bir SaaS için 3-5 hafta. Mimari, temel araçlar, ilk 100 test ve dokümantasyonu içerir.",
-    faq2_q: "Uzaktan (Remote) çalışıyor musun?", faq2_a: "Evet, dünya genelinde %100 uzaktan. Ankara merkezliyim. Eşzamanlı veya asenkron toplantılar için esneğim.",
-    faq3_q: "Ekibimiz daha önce hiç otomasyon yapmadıysa?", faq3_a: "Mükemmel bir başlangıç noktası. Ekibin bağımsızlığı için dokümanlar, eğitimler ve 30 günlük teslimat sonrası destek sağlıyorum.",
-    faq4_q: "Yapay zeka araçları kullanıyor musun?", faq4_a: "Evet — Test yazımını ve raporlamayı hızlandırmak için Claude Code, Codex ve Gemini kullanıyorum. Aynı kalitede daha hızlı teslimat sağlar.",
+    faq1_q: "Proje süresi ve teslimat ne kadar sürer?", faq1_a: "Indie paketler genellikle 1-2 haftada tamamlanır. Kapsamlı bir Startup test altyapısı ise CI/CD ve dokümantasyon dahil 3-5 haftada eksiksiz teslim edilir.",
+    faq2_q: "Bütçe ve ödeme modeli nasıl işliyor?", faq2_a: "Sabit kapsamlı veya kilometre taşı (milestone) bazlı şeffaf teklifler sunuyoruz. Sürpriz maliyetler olmadan, belirlenen çıktılara göre ilerlenir.",
+    faq3_q: "Projemizde daha önce hiç test yazılmadıysa ne olur?", faq3_a: "Bu oldukça yaygın bir durumdur ve sıfırdan temiz bir mimari kurmak için idealdir. Kritik kullanıcı akışlarını belirler, ilk günden itibaren güvenli sürüm kapıları oluştururuz.",
+    faq4_q: "Gizlilik Sözleşmesi (NDA) imzalıyor musunuz?", faq4_a: "Kesinlikle. Tüm ticari projeler, kod tabanları ve şirket içi veriler gizlilik esasına tabidir. Çalışmaya başlamadan önce karşılıklı NDA imzalanır.",
+    faq5_q: "Hangi test araçlarını kullanıyorsunuz?", faq5_a: "Çekirdek uzmanlığımız Playwright + TypeScript ve GitHub Actions üzerinedir. Ayrıca projeye göre Selenium, Appium, Postman, Rest Assured ve JMeter tecrübelerimizden yararlanıyoruz.",
+    faq6_q: "Çalışma modeli ve iletişim nasıl sağlanıyor?", faq6_a: "Dünya genelinde %100 uzaktan (remote) çalışıyoruz. Slack/Teams, asenkron güncellemeler ve haftalık demo toplantıları ile sürekli ve şeffaf iletişim kuruyoruz. İlk yanıtlarda 24 saat SLA'ine sadık kalıyoruz.",
     
-    cta_title: "Sıfır hataya", cta_title_em: "hazır mısınız?", cta_p: "Proje detaylarınızı formu doldurarak iletin veya sadece merhaba deyin. 30 dakikalık keşif görüşmesi, taahhüt yok.",
-    guar_1: "4 Saat içinde dönüş", guar_2: "Global & Uzaktan Destek",
-    form_name: "Adınız", form_email: "E-posta Adresiniz", form_company: "Şirket Adı (Opsiyonel)", form_message: "Mesajınız", form_name_ph: "Mustafa Sağıroğlu", form_email_ph: "ornek@sirketiniz.com", form_message_ph: "Projenizi, zaman çizelgenizi ve gereksinimlerinizi açıklayın...", btn_submit: "Talebi Gönder",
+    // Contact & CTA
+    cta_title: "Güvenle yayına çıkmaya", cta_title_em: "hazır mısınız?", cta_p: "Proje detaylarınızı iletin veya size uygun paketi seçin. 30 dakikalık keşif görüşmesi, taahhüt yok.",
+    guar_1: "24 saat içinde yanıt", guar_2: "Global & Uzaktan Destek",
+    form_type_lbl: "Proje Türü", form_type_indie: "Bireysel / Indie Proje", form_type_b2b: "Şirket / Ekip Projesi",
+    form_pkg_lbl: "İlgilendiğiniz Paket", form_pkg_indie: "Indie / Bireysel", form_pkg_startup: "Startup / Ekip", form_pkg_enterprise: "Kurumsal / B2B", form_pkg_custom: "Özel Kapsam",
+    form_name: "Adınız", form_email: "E-posta Adresiniz", form_company: "Şirket Adı (Opsiyonel)", form_message: "Mesajınız",
+    form_name_ph: "Mustafa Sağıroğlu", form_email_ph: "ornek@sirketiniz.com", form_message_ph: "Ürününüzü, mevcut test durumunuzu, zaman çizelgenizi ve hedeflerinizi anlatın...",
+    form_consent: "KVKK/GDPR kapsamında iletişim bilgilerimin proje teklifi amacıyla işlenmesini onaylıyorum.",
+    contact_email_direct: "Doğrudan İletişim: hello@zeroescapes.dev",
+    btn_submit: "Talebi Gönder",
     
     footer_copy: "QA Otomasyon Mimarı · 5+ yıl · ISTQB Sertifikalı · Dünya geneli uzaktan."
   },
+  
   ar: {
+    /* REVIEW_REQUIRED: Arabic translation */
     nav_why: "لماذا أنا", nav_exp: "الخبرة", nav_svc: "الخدمات", nav_port: "المحفظة", nav_skills: "المهارات", nav_faq: "الأسئلة", nav_hire: "وظفني",
-    h1_1: "صفر", h1_2: "أخطاء",
-    hp_subtitle: "لا تسمح بهروب الأخطاء للإنتاج.",
-    hp_desc: "مهندس معمارية أتمتة الاختبارات معتمد من ISTQB بخبرة +5 سنوات. Playwright + TypeScript + CI/CD. تم تسليم +1,500 سيناريو اختبار.",
-    btn_call: "احجز مكالمة", btn_work: "أعمالي",
-    trust_line: "شريك QA موثوق. متاح للعمل عن بُعد عالمياً. +1.5 ألف اختبار.",
     
+    // Hero
+    h1_1: "انطلق بـ", h1_2: "ثقة تامة.",
+    hp_subtitle: "أتمتة الاختبارات الشاملة، واختبارات الأداء وتكامل CI/CD.",
+    hp_desc: "طور ميزاتك ونحن نضمن الجودة. تراجع أقل للأخطاء، وسرعة إطلاق أعلى، ونشر موثوق في بيئة الإنتاج.",
+    btn_call: "احجز مكالمة", btn_work: "أعمالي",
+    btn_packages: "استعراض الباقات", btn_tell_project: "أريد مناقشة مشروعي",
+    trust_line: "شريك QA معتمد من ISTQB. تم تسليم +1,500 سيناريو اختبار عالمياً.",
+    
+    // Authority & ISTQB
+    istqb_badge: "ISTQB Certified Tester, Foundation Level",
+    authority_text: "من المشاريع الفردية إلى المنظومات المؤسسية، نصمم استراتيجيات جودة مستدامة تناسب كل المستويات.",
+    
+    // Why Zero Escapes
     why_lbl: "لماذا Zero Escapes", why_title: "الأخطاء تتوقف هنا.", why_sub: "لماذا يختارني العملاء.", why_desc: "لست مجرد مهندس QA — أنا شريك جودة استراتيجي يتعامل مع كود العميل كمنتجه الخاص.",
     w1_t: "معمار أطر العمل، لست كاتب نصوص", w1_d: "أطر عمل POM قابلة للتوسع. بناء من الصفر أو إنقاذ الأنظمة القديمة.",
     w2_t: "خبير CI/CD — نهج Shift-Left", w2_d: "دمج الاختبارات في مسارات النشر الخاصة بك منذ اليوم الأول. يتم التحقق من كل PR.",
@@ -197,6 +352,54 @@ export const I18N = {
     w5_t: "متوافق مع Agile", w5_d: "اجتماعات يومية، معايير BDD/Gherkin. تتحول الاختبارات إلى توثيق حي.",
     w6_t: "تقارير جاهزة للإدارة", w6_d: "اتجاهات الأخطاء، لوحات تحكم للمهندسين والإدارة العليا عبر Allure.",
     
+    // Process (4 Steps)
+    proc_lbl: "منهجية العمل", proc_title: "كيف نعمل", proc_sub: "4 خطوات من الاستكشاف حتى التسليم الآمن والمؤتمت.",
+    proc1_t: "01 الاستكشاف والتدقيق", proc1_d: "تحليل التقنيات والكود والمسارات الحيوية للمستخدم.",
+    proc2_t: "02 استراتيجية الاختبار", proc2_d: "تحديد مصفوفة التغطية والمعمارية وجداول تشغيل CI.",
+    proc3_t: "03 الأتمتة وتكامل CI/CD", proc3_d: "بناء اختبارات قابلة للصيانة، وتشغيل متوازٍ وفحص لكل PR.",
+    proc4_t: "04 التقارير والتسليم والدعم", proc4_d: "توثيق شامل وتدريب الفريق ولوحات قياس ودعم مستمر.",
+    
+    // Packages
+    pkg_lbl: "باقات الخدمات", pkg_title: "خطط جودة شفافة", pkg_sub: "مصممة للمطورين المستقلين والشركات الناشئة والمؤسسات.",
+    pkg_popular: "الأكثر طلباً", pkg_quote: "طلب عرض سعر", pkg_cta: "ابدأ الآن",
+    pkg_response_time: "استجابة أولى واستكشاف خلال 24 ساعة",
+    
+    pkg1_name: "فردي / مستقل",
+    pkg1_target: "للمطورين المستقلين وأصحاب مشاريع MVP",
+    pkg1_timeline: "1–2 أسابيع",
+    pkg1_model: "نطاق عمل محدد أو مرحلي",
+    pkg1_f1: "اختبارات واجهة المستخدم والمسارات الأساسية",
+    pkg1_f2: "التحقق من نقاط النهاية الأساسية للـ API",
+    pkg1_f3: "تقرير سريع برصد الأخطاء وتصنيفها",
+    pkg1_f4: "إعداد خفيف عبر Playwright أو Cypress",
+    pkg1_f5: "دليل التشغيل المحلي ونصوص الأتمتة",
+    pkg1_f6: "جلسة تسليم وإرشادات بعد الإنجاز",
+    
+    pkg2_name: "الشركات الناشئة / الفرق",
+    pkg2_target: "للفرق التي تطلق ميزات بسرعة وتحتاج إلى بوابات فحص مستقرة",
+    pkg2_timeline: "3–5 أسابيع",
+    pkg2_model: "متوافق مع دورات السبرنت أو مخصص",
+    pkg2_f1: "معمارية POM قابلة للتوسع (Playwright + TypeScript)",
+    pkg2_f2: "بوابات فحص تلقائي عبر GitHub Actions",
+    pkg2_f3: "حزمة انحدار شاملة لجميع تدفقات المستخدم الحيوية",
+    pkg2_f4: "التحقق من تكامل واجهات البرمجة وقواعد البيانات",
+    pkg2_f5: "نظام تقارير متقدم ومفصل عبر Allure",
+    pkg2_f6: "تدريب الفريق وجلسة مراجعة الكود والتوثيق",
+    pkg2_f7: "دعم فني مخصص لمدة 30 يوماً بعد التسليم",
+    
+    pkg3_name: "المؤسسات / الشركات الكبرى",
+    pkg3_target: "للهندسات المعمارية المعقدة والأنظمة عالية الحجم",
+    pkg3_timeline: "استشارات مستمرة أو 6+ أسابيع",
+    pkg3_model: "عقد استشاري مخصص أو دوري",
+    pkg3_f1: "هيكلية QA مؤسسية واستراتيجية shift-left",
+    pkg3_f2: "تغطية شاملة للمتصفحات والمنصات المختلفة",
+    pkg3_f3: "اختبارات الأداء والأحمال العالية (JMeter)",
+    pkg3_f4: "مسارات نشر متعددة ومعقدة (GitHub Actions / Jenkins)",
+    pkg3_f5: "لوحات تقارير تنفيذية للإدارة العليا",
+    pkg3_f6: "اتفاقية مستوى خدمة مخصصة (SLA)",
+    pkg3_f7: "إشراف معماري واستشارات مستمرة",
+    
+    // Professional Experience
     exp_lbl: "الخبرة المهنية", exp_title: "5+ سنوات،", exp_sub: "4 دول، صفر هروب للأخطاء.",
     exp1_role: "أخصائي QA ومدير مشروع تقني لدى THY · F4E",
     exp1_date: "01/2025 – الحاضر",
@@ -232,14 +435,16 @@ export const I18N = {
     exp_semih_role: "مهندس أتمتة ضمان الجودة · عمل حر",
     exp_semih_date: "مؤخراً",
     exp_semih_b1: "أكملت دورة اختبار شاملة لـ Salesroom (Pager-delta).",
-    exp_semih_b2: "قدمت تقارير اختبار شاملة تغطي الاختبارات اليدوية والآلية.",
+    exp_semih_b2: "قدمت تقارير اختبار يدوية وآلية شاملة.",
     
+    // Services
     svc_lbl: "الخدمات", svc_title: "ماذا أقدم", svc_sub: "من البداية للنهاية.",
     svc1_t: "بناء أطر العمل QA", svc1_d: "أطر عمل مخصصة باستخدام Playwright مع تكامل CI/CD وتوثيق لتدريب الفريق.",
     svc2_t: "إنقاذ الأنظمة القديمة", svc2_d: "التدقيق، التحديث — الانتقال من Selenium غير المستقر إلى Playwright قوي.",
     svc3_t: "أتمتة الهواتف الذكية", svc3_d: "اختبار التطبيقات على أجهزة حقيقية (iOS/Android) باستخدام Appium مع تكامل CI.",
     svc4_t: "اختبار API", svc4_d: "ضمان موثوقية الأنظمة الخلفية عبر أجنحة مؤتمتة في مسار النشر المستمر.",
     
+    // Portfolio
     port_lbl: "دراسات الحالة", port_title: "أعمال تم تسليمها.", port_sub: "نتائج قابلة للقياس.",
     port_c1_t: "Feedback4E — منصة SaaS",
     port_l1_1: "إطار عمل جديد مبني من الصفر",
@@ -252,23 +457,37 @@ export const I18N = {
     port_l3_1: "تنفيذ دورة اختبار شاملة من الصفر",
     port_l3_2: "تقديم تقارير اختبار يدوية وآلية شاملة",
     
-    sk_lbl: "المهارات والأدوات", sk_title: "الأدوات التي تضمن", sk_sub: "صفر هروب للأخطاء.",
+    // Skills
+    sk_lbl: "المهارات والأدوات", sk_title: "التقنيات التي أعمل بها", sk_sub: "أدوات تم اختبارها ميدانياً.",
+    sk_core_title: "الخبرات الأساسية",
+    sk_exp_title: "خبرات العمل الميداني",
     
+    // Testimonials
     test_lbl: "شهادات العملاء", test_title: "ماذا يقول العملاء",
-    test1_t: "مصطفى حوّل عملية QA لدينا بالكامل. انخفضت أخطاء الإنتاج إلى ما يقارب الصفر في 6 أسابيع فقط.", test1_r: "مدير التكنولوجيا · شركة SaaS، برلين",
+    test1_t: "مصطفى حوّل عملية QA لدينا بالكامل. انخفضت أخطاء الإنتاج بشكل ملحوظ في 6 أسابيع فقط.", test1_r: "مدير التكنولوجيا · شركة SaaS، برلين",
     test2_t: "إطار العمل الذي بناه مصطفى يتميز بسرعة الصيانة والتكامل. نحن نكتشف الأخطاء قبل مرحلة التجربة بكثير.", test2_r: "قائد الهندسة · تجارة إلكترونية، إسطنبول",
     test3_t: "عمق فني استثنائي مع تواصل ممتاز. أوصي به بشدة لأي مشروع QA حقيقي.", test3_r: "مدير المنتجات · التكنولوجيا المالية، لندن",
     test4_t: "كان العمل مع مصطفى رائعًا. يهتم بالتفاصيل بشكل فائق وسريع للغاية.", test4_r: "Semih Ö. · قائد التصميم الفني ومدير المشروع",
     
+    // FAQ
     faq_lbl: "الأسئلة الشائعة", faq_title: "أسئلة شائعة",
-    faq1_q: "كم يستغرق بناء إطار العمل؟", faq1_a: "3–5 أسابيع لمنصة SaaS متوسطة مع CI/CD. يشمل المعمارية وأول 100 اختبار.",
-    faq2_q: "هل تعمل عن بُعد؟", faq2_a: "عن بُعد 100%، عالمياً. أعمل حالياً من أنقرة وأتمتع بمرونة للاجتماعات.",
-    faq3_q: "ماذا لو لم يسبق لفريقنا الأتمتة؟", faq3_a: "نقطة بداية مثالية. أقدم تدريباً وتوثيقاً ودعماً لمدة 30 يوماً.",
-    faq4_q: "هل تستخدم أدوات الذكاء الاصطناعي؟", faq4_a: "نعم — Claude Code و Gemini لتسريع وتيرة العمل بنفس الجودة العالية.",
+    faq1_q: "كم يستغرق بناء إطار العمل أو المشروع؟", faq1_a: "تستغرق الباقات الفردية عادة 1–2 أسابيع. وتستغرق حزمة الشركات الناشئة الشاملة 3–5 أسابيع بما في ذلك CI/CD والتوثيق.",
+    faq2_q: "كيف يعمل نموذج الميزانية والدفع؟", faq2_a: "نقدم عروضاً شفافة بنطاق عمل محدد أو على أساس مراحل الإنجاز بدون أي تكاليف غير متوقعة.",
+    faq3_q: "ماذا لو لم يحتوِ مشروعنا على أي اختبارات سابقة؟", faq3_a: "هذه نقطة بداية مثالية. نحدد المسارات الحيوية ونبني هيكلية نقية ومستدامة من اليوم الأول.",
+    faq4_q: "هل توقعون اتفاقية عدم إفصاح (NDA)؟", faq4_a: "بالتأكيد. جميع بيانات الكود والمشاريع تخضع لسرية تامة بموجب اتفاقية NDA متبادلة قبل البدء.",
+    faq5_q: "ما هي الأدوات والأطر التي تستخدمها؟", faq5_a: "تركيزنا الأساسي على Playwright + TypeScript و GitHub Actions. ونستفيد أيضاً من خبراتنا العملية في Selenium و Appium و Postman و Rest Assured و JMeter.",
+    faq6_q: "كيف يتم نموذج العمل وتيرة التواصل؟", faq6_a: "عن بُعد بنسبة 100% عالمياً. نتواصل عبر Slack/Teams وتحديثات دورية وعروض أسبوعية. ونلتزم بالرد الأول خلال 24 ساعة.",
     
-    cta_title: "جاهز لـ", cta_title_em: "صفر أخطاء؟", cta_p: "املأ النموذج بتفاصيل مشروعك أو فقط قل مرحبًا. مكالمة استكشاف 30 دقيقة، بدون التزام.",
-    guar_1: "رد خلال 4 ساعات", guar_2: "عمل عن بعد عالمياً",
-    form_name: "اسمك", form_email: "البريد الإلكتروني", form_company: "اسم الشركة (اختياري)", form_message: "رسالتك", form_name_ph: "مصطفى صاغيرأوغلو", form_email_ph: "name@company.com", form_message_ph: "صف مشروعك والجدول الزمني والمتطلبات...", btn_submit: "إرسال الطلب",
+    // Contact & CTA
+    cta_title: "جاهز للانطلاق بـ", cta_title_em: "ثقة تامة؟", cta_p: "املأ النموذج بتفاصيل مشروعك أو اختر الباقة المناسبة. مكالمة استكشافية 30 دقيقة، بدون التزام.",
+    guar_1: "استجابة خلال 24 ساعة", guar_2: "عمل عن بعد عالمياً",
+    form_type_lbl: "نوع المشروع", form_type_indie: "مشروع فردي / مستقل", form_type_b2b: "مشروع شركة / فريق",
+    form_pkg_lbl: "الباقة المطلوبة", form_pkg_indie: "فردي / مستقل", form_pkg_startup: "الشركات الناشئة / الفرق", form_pkg_enterprise: "المؤسسات / الشركات الكبرى", form_pkg_custom: "نطاق مخصص",
+    form_name: "اسمك", form_email: "البريد الإلكتروني", form_company: "اسم الشركة (اختياري)", form_message: "رسالتك",
+    form_name_ph: "مصطفى صاغيرأوغلو", form_email_ph: "name@company.com", form_message_ph: "صف منتجك، وحالة الاختبارات الحالية، والجدول الزمني، والأهداف...",
+    form_consent: "أوافق على معالجة بيانات الاتصال لغرض الاستفسار عن المشروع وفقاً لمعايير الخصوصية.",
+    contact_email_direct: "التواصل المباشر: hello@zeroescapes.dev",
+    btn_submit: "إرسال الطلب",
     
     footer_copy: "مهندس أتمتة اختبار · +5 سنوات · معتمد ISTQB · عمل عن بُعد عالمياً."
   }
