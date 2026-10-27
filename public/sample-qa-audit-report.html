@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Örnek QA ve Otomasyon Raporu (Kurgusal) | Zero Escapes</title>
+  <meta name="description" content="Örnek QA ve otomasyon denetim raporu: kurgusal demo senaryo üzerinde hazırlanmış yönetici özeti, akış durumu, hata kayıtları ve Playwright kod örneği.">
+  <link rel="canonical" href="https://zeroescapes.dev/sample-qa-audit-report.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b111e;
+      --card-bg: #121b2d;
+      --border: #223450;
+      --text: #f1f7ff;
+      --text-muted: #8ba2c0;
+      --primary: #10b981;
+      --primary-bg: rgba(16, 185, 129, 0.1);
+      --destructive: #ef4444;
+      --destructive-bg: rgba(239, 68, 68, 0.12);
+      --warn: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 900px; margin: 0 auto; }
+    header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
+    .badge-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .brand { font-weight: 700; font-size: 1.25rem; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .lang-switcher { display: flex; gap: 0.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; }
+    .lang-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .lang-btn.active { color: var(--primary); border-color: var(--primary); font-weight: bold; }
+    
+    /* MANDATORY HONESTY BADGE: Print-visible, top of page, cannot be missed */
+    .honesty-badge {
+      background: var(--card-bg);
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .honesty-badge svg { flex-shrink: 0; width: 28px; height: 28px; color: var(--primary); margin-top: 2px; }
+
+    .meta-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      font-size: 0.9rem;
+    }
+    .meta-box .label { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 0.25rem; }
+    .meta-box .val { font-weight: 700; font-size: 1.1rem; }
+    .meta-box .val.verdict { color: var(--primary); }
+
+    h2 { font-size: 1.4rem; margin: 2rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    
+    table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; font-size: 0.9rem; background: var(--card-bg); border-radius: 8px; overflow: hidden; }
+    th, td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); text-align: left; }
+    th { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); background: rgba(0,0,0,0.2); }
+    .status-tag { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 700; }
+    .status-pass { background: var(--primary-bg); color: var(--primary); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .status-warn { background: rgba(245, 158, 11, 0.15); color: var(--warn); border: 1px solid rgba(245, 158, 11, 0.3); }
+    .status-fail { background: var(--destructive-bg); color: var(--destructive); border: 1px solid rgba(239, 68, 68, 0.4); }
+
+    .bug-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .bug-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+    .bug-id { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--primary); }
+    .bug-sev { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; background: var(--destructive-bg); color: var(--destructive); }
+    .bug-card h3 { font-size: 1.05rem; margin-bottom: 0.75rem; }
+    .bug-card ol { margin-left: 1.25rem; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .bug-card .field { font-size: 0.85rem; margin-bottom: 0.5rem; }
+    .bug-card .field-lbl { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; }
+
+    pre {
+      background: #060a12;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+      color: #7dd3fc;
+    }
+
+    .footer-actions {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: #060d18;
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
+
+    @media print {
+      body { background: #fff !important; color: #111 !important; padding: 0 !important; }
+      .container { max-width: 100% !important; }
+      .honesty-badge { background: #fff !important; border: 2px solid #000 !important; color: #000 !important; page-break-inside: avoid; }
+      .honesty-badge svg { color: #000 !important; }
+      .meta-box, .bug-card, table { background: #fff !important; border: 1px solid #ccc !important; color: #111 !important; page-break-inside: avoid; }
+      th, td { border-bottom: 1px solid #ddd !important; color: #111 !important; }
+      th { background: #f5f5f5 !important; }
+      pre { background: #f8f9fa !important; color: #111 !important; border: 1px solid #ddd !important; }
+      .lang-switcher, .footer-actions, .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge-bar">
+        <a href="/" class="brand">
+          <svg viewBox="0 0 40 40" fill="none" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 2.5L35.5 11.5V28.5L20 37.5L4.5 28.5V11.5L20 2.5Z" stroke="#f1f7ff" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M12 14H28L12 26H28" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Zero Escapes
+        </a>
+        <div class="lang-switcher no-print">
+          <a href="?lang=tr" class="lang-btn" id="btn-tr">Türkçe</a>
+          <a href="?lang=en" class="lang-btn" id="btn-en">English</a>
+          <a href="?lang=ar" class="lang-btn" id="btn-ar">العربية</a>
+        </div>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted);" id="lbl-lead">
+        QA & Test Otomasyonu Denetim Çıktısı · Mustafa Sağıroğlu (ISTQB Certified Tester, Foundation Level)
+      </p>
+    </header>
+
+    <!-- ZORUNLU DÜRÜSTLÜK ROZETİ (Sayfanın en üstünde, kapatılamaz, print'te açık) -->
+    <div class="honesty-badge" id="honesty-badge" role="note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 8v5M12 16.5v.01" stroke-linecap="round" />
+      </svg>
+      <div id="badge-text">
+        Örnek rapor: kurgusal bir demo senaryo üzerinde hazırlanmıştır. Gerçek müşteri verisi veya gerçek test sonucu içermez.
+      </div>
+    </div>
+
+    <div class="meta-box">
+      <div>
+        <div class="label" id="lbl-app">Uygulama Adı</div>
+        <div class="val" id="val-app">Örnek SaaS Uygulaması (Kurgusal)</div>
+      </div>
+      <div>
+        <div class="label" id="lbl-verdict">Yayın Önerisi</div>
+        <div class="val verdict" id="val-verdict">Koşullu yayına uygun (2 kritik hata düzeltilmeli)</div>
+      </div>
+      <div>
+        <div class="label" id="lbl-env">Kontrol Edilen Ortamlar</div>
+        <div class="val" style="font-size: 0.95rem; font-weight: normal;" id="val-env">
+          Chromium (masaüstü), WebKit (iOS Safari 390x844), Firefox
+        </div>
+      </div>
+    </div>
+
+    <h2 id="hdr-flows">1. Kritik Akışlar ve Durum Matrisi</h2>
+    <table id="flows-table">
+      <thead>
+        <tr>
+          <th id="th-flow">Kullanıcı Akışı</th>
+          <th style="width: 140px;" id="th-status">Durum</th>
+          <th id="th-note">Not / Açıklama</th>
+        </tr>
+      </thead>
+      <tbody id="flows-body">
+        <!-- Rendered by JS -->
+      </tbody>
+    </table>
+
+    <h2 id="hdr-bugs">2. Örnek Hata Kayıtları (Defect Reports)</h2>
+    <div id="bugs-container">
+      <!-- Rendered by JS -->
+    </div>
+
+    <h2 id="hdr-code">3. Teslim Edilen Playwright + TypeScript Test Kodu</h2>
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+      tests/e2e/checkout.spec.ts (Page Object Model)
+    </div>
+    <pre><code>import { test, expect, type Page } from '@playwright/test';
+
+class CheckoutPage {
+  constructor(private page: Page) {}
+  open = () => this.page.goto('/upgrade');
+  payWithTestCard = () => this.page.getByRole('button', { name: 'Pay with test card' }).click();
+}
+
+test('plan becomes Pro even when webhook is delayed', async ({ page }) => {
+  await page.route('**/api/billing/status', async (route) => {
+    await new Promise((r) => setTimeout(r, 4000)); // simulate slow webhook
+    await route.continue();
+  });
+  const checkout = new CheckoutPage(page);
+  await checkout.open();
+  await checkout.payWithTestCard();
+  await expect(page.getByTestId('plan-badge')).toHaveText('Pro', { timeout: 15_000 });
+});</code></pre>
+
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;" id="lbl-ci">
+      GitHub Actions CI / CD Koşum Çıktısı (Örnek)
+    </div>
+    <pre><code>Running 4 tests using 3 workers
+  ok  chromium        checkout.spec.ts  plan becomes Pro even when webhook is delayed (6.2s)
+  ok  webkit          checkout.spec.ts  plan becomes Pro even when webhook is delayed (6.9s)
+  ok  firefox         checkout.spec.ts  plan becomes Pro even when webhook is delayed (6.5s)
+  ok  webkit-390x844  projects.spec.ts  save button stays tappable in modal (3.1s)
+  4 passed (14.8s)</code></pre>
+
+    <div class="footer-actions no-print">
+      <a href="/#contact" class="btn" id="btn-request">Benzer Bir Rapor İstiyorum</a>
+      <button onclick="window.print()" class="btn btn-secondary" id="btn-print">🖨️ Sayfayı Yazdır / PDF İndir</button>
+    </div>
+  </div>
+
+  <script>
+    const DATA = {
+      tr: {
+        title: "Örnek QA ve Otomasyon Raporu (Kurgusal) | Zero Escapes",
+        lead: "QA & Test Otomasyonu Denetim Çıktısı · Mustafa Sağıroğlu (ISTQB Certified Tester, Foundation Level)",
+        badge: "Örnek rapor: kurgusal bir demo senaryo üzerinde hazırlanmıştır. Gerçek müşteri verisi veya gerçek test sonucu içermez.",
+        appLbl: "Uygulama Adı",
+        appName: "Örnek SaaS Uygulaması (Kurgusal)",
+        verdictLbl: "Yayın Önerisi",
+        verdict: "Koşullu yayına uygun (2 kritik hata düzeltilmeli)",
+        envLbl: "Kontrol Edilen Ortamlar",
+        env: "Chromium (masaüstü), WebKit (masaüstü & iOS Safari 390x844), Firefox",
+        hdrFlows: "1. Kritik Akışlar ve Durum Matrisi",
+        thFlow: "Kullanıcı Akışı",
+        thStatus: "Durum",
+        thNote: "Not / Detay",
+        hdrBugs: "2. Örnek Hata Kayıtları (Defect Reports)",
+        hdrCode: "3. Teslim Edilen Playwright + TypeScript Test Kodu",
+        ciLbl: "GitHub Actions CI / CD Koşum Çıktısı (Örnek)",
+        btnRequest: "Benzer Bir Rapor İstiyorum",
+        btnPrint: "🖨️ Sayfayı Yazdır / PDF İndir",
+        flows: [
+          { name: "Auth / Magic Link ve OAuth giriş", status: "PASS", note: "Beklendiği gibi çalıştı." },
+          { name: "AI çalışma alanı prompt üretimi", status: "WARN", note: "Yavaş API yanıtında yükleme göstergesi donuyor." },
+          { name: "Stripe ödeme ve webhook senkronu", status: "FAIL", note: "Kritik (P0) — Bkz. BUG-01" },
+          { name: "Mobil viewport (390px) navigasyon", status: "FAIL", note: "Yüksek (P1) — Bkz. BUG-02" },
+          { name: "Form doğrulama ve boş durumlar", status: "PASS", note: "Tüm hata durumları kontrol edildi." },
+          { name: "API rate limit ve hata bildirimi", status: "WARN", note: "Sınır aşıldığında kullanıcıya toast bildirimi eksik." }
+        ],
+        bugs: [
+          {
+            id: "BUG-01",
+            sev: "Kritik / P0",
+            title: "Stripe ödemesi başarılı dönmesine rağmen yavaş ağda webhook geciktiğinde kullanıcı Free planda kalıyor",
+            steps: ["Free plandaki bir test hesabıyla giriş yap.", "Ağı yavaş profile al.", "Yükseltme sayfasında Stripe test kartıyla öde.", "Panele dön ve plan rozetini oku."],
+            expected: "Ödeme başarılı olunca, webhook geç gelse bile plan rozeti Pro görünür.",
+            actual: "Rozet Free kalıyor; kullanıcı ödeme yapmış olmasına rağmen yenileme yapana dek Pro erişimi alamıyor.",
+            evidence: "Playwright trace ve konsol logu (bu örnekte gösterilmez)."
+          },
+          {
+            id: "BUG-02",
+            sev: "Yüksek / P1",
+            title: "iOS Safari 390px görünümünde Create Project modalındaki kaydet butonu alt çubuğun altında kalıp tıklanamıyor",
+            steps: ["Uygulamayı WebKit'te 390x844 (iOS Safari) olarak aç.", "Create Project'e dokun.", "Zorunlu alanları doldur.", "Kaydet butonuna dokun."],
+            expected: "Kaydet butonu tamamen görünür ve tıklanabilir olmalıdır.",
+            actual: "Buton sabit alt çubuğun altında kalıyor ve tıklanamıyor.",
+            evidence: "Playwright trace ve ekran görüntüsü (bu örnekte gösterilmez)."
+          }
+        ]
+      },
+      en: {
+        title: "Sample QA & Automation Audit Report (Fictional) | Zero Escapes",
+        lead: "QA & Test Automation Audit Report · Mustafa Sağıroğlu (ISTQB Certified Tester, Foundation Level)",
+        badge: "Sample report: prepared on a fictional demo scenario. It contains no real client data or real test results.",
+        appLbl: "Application",
+        appName: "Example SaaS App (Fictional)",
+        verdictLbl: "Release Recommendation",
+        verdict: "Hold release (fix 2 critical blockers first)",
+        envLbl: "Environments Checked",
+        env: "Chromium (desktop), WebKit (desktop & 390x844 iOS Safari), Firefox",
+        hdrFlows: "1. Critical Flow Status Matrix",
+        thFlow: "User Flow",
+        thStatus: "Status",
+        thNote: "Note / Details",
+        hdrBugs: "2. Sample Defect Records",
+        hdrCode: "3. Delivered Playwright + TypeScript Test Code",
+        ciLbl: "GitHub Actions CI / CD Run Summary (Sample)",
+        btnRequest: "I Want a Similar Report",
+        btnPrint: "🖨️ Print Page / Save as PDF",
+        flows: [
+          { name: "Auth / Magic Link and OAuth sign-in", status: "PASS", note: "Works as expected." },
+          { name: "AI workspace prompt generation", status: "WARN", note: "Loading indicator freezes on slow API responses." },
+          { name: "Stripe payment and webhook sync", status: "FAIL", note: "Critical (P0) — See BUG-01" },
+          { name: "Mobile viewport (390px) navigation", status: "FAIL", note: "High (P1) — See BUG-02" },
+          { name: "Form validation and empty states", status: "PASS", note: "All input boundaries verified." },
+          { name: "API rate limit and error messaging", status: "WARN", note: "Toast missing when rate threshold is hit." }
+        ],
+        bugs: [
+          {
+            id: "BUG-01",
+            sev: "Critical / P0",
+            title: "User stays on Free plan after successful Stripe payment when webhook is delayed",
+            steps: ["Log in with a Free test account.", "Throttle network to slow profile.", "Pay with Stripe test card on upgrade page.", "Return to dashboard and check plan badge."],
+            expected: "Plan badge updates to Pro immediately upon payment success even if webhook is delayed.",
+            actual: "Badge stays on Free; user paid but lacks Pro access until manual refresh much later.",
+            evidence: "Playwright trace and console log (not shown in this sample)."
+          },
+          {
+            id: "BUG-02",
+            sev: "High / P1",
+            title: "Save button in Create Project modal sits beneath fixed bottom bar at 390px on iOS Safari",
+            steps: ["Open app at 390x844 in WebKit (iOS Safari viewport).", "Tap Create Project.", "Fill in required fields.", "Attempt to tap save button."],
+            expected: "Save button is fully visible and clickable within safe-area boundaries.",
+            actual: "Button is obscured beneath fixed navigation bar and cannot be tapped.",
+            evidence: "Playwright trace and screenshot (not shown in this sample)."
+          }
+        ]
+      },
+      ar: {
+        title: "تقرير فحص وضمان الجودة (خيالي) | Zero Escapes",
+        lead: "مخرج فحص الجودة وأتمتة الاختبارات · مصطفى صاغيروغلو (ISTQB Certified Tester, Foundation Level)",
+        badge: "تقرير تجريبي: أُعدّ على سيناريو عرض خيالي. لا يحتوي على أي بيانات عملاء حقيقية أو نتائج اختبار حقيقية.",
+        appLbl: "اسم التطبيق",
+        appName: "تطبيق SaaS تجريبي (خيالي)",
+        verdictLbl: "توصية الإطلاق",
+        verdict: "تأجيل الإصدار (أصلح عائقين حرجين أولًا)",
+        envLbl: "البيئات المفحوصة",
+        env: "Chromium (سطح المكتب)، WebKit (منفذ عرض iOS 390x844)، Firefox",
+        hdrFlows: "1. مصفوفة حالة المسارات الحرجة",
+        thFlow: "المسار",
+        thStatus: "الحالة",
+        thNote: "ملاحظات",
+        hdrBugs: "2. سجلات الأخطاء التجريبية (Defects)",
+        hdrCode: "3. كود Playwright + TypeScript المسلّم",
+        ciLbl: "مخرج تشغيل GitHub Actions CI (تجريبي)",
+        btnRequest: "أريد تقريرًا مشابهًا",
+        btnPrint: "🖨️ طباعة الصفحة / حفظ كـ PDF",
+        flows: [
+          { name: "المصادقة / الرابط السحري وتسجيل الدخول", status: "PASS", note: "يعمل بالشكل المتوقع." },
+          { name: "توليد الأوامر في مساحة عمل الذكاء الاصطناعي", status: "WARN", note: "مؤشر التحميل يتجمد عند بطء استجابة الـ API." },
+          { name: "دفع Stripe ومزامنة الـ webhook", status: "FAIL", note: "حرج (P0) — انظر BUG-01" },
+          { name: "التنقل في منفذ العرض المحمول (390px)", status: "FAIL", note: "عالٍ (P1) — انظر BUG-02" },
+          { name: "التحقق من النماذج والحالات الفارغة", status: "PASS", note: "تم فحص جميع حالات التحقق." },
+          { name: "حدّ معدل الـ API ورسائل الخطأ", status: "WARN", note: "لا تظهر رسالة للمستخدم عند تجاوز الحد." }
+        ],
+        bugs: [
+          {
+            id: "BUG-01",
+            sev: "حرج / P0",
+            title: "يبقى المستخدم على الخطة المجانية بعد نجاح الدفع عندما يتأخر الـ webhook",
+            steps: ["تسجيل الدخول بحساب مجاني.", "إبطاء سرعة الشبكة.", "إتمام الدفع ببطاقة تجريبية.", "التحقق من شارة الخطة."],
+            expected: "تتغير شارة الخطة إلى Pro فور نجاح الدفع حتى مع تأخر الـ webhook.",
+            actual: "تبقى الشارة على Free ولا يحصل المستخدم على الترقية إلا بعد تحديث يدوي.",
+            evidence: "Playwright trace وسجل console (غير معروضين في هذا المثال)."
+          },
+          {
+            id: "BUG-02",
+            sev: "عالٍ / P1",
+            title: "زر الحفظ في نافذة Create Project يختفي تحت الشريط السفلي في iOS Safari بعرض 390px",
+            steps: ["فتح التطبيق بعرض 390x844.", "الضغط على Create Project.", "تعبئة الحقول المطلوبة.", "محاولة الضغط على زر الحفظ."],
+            expected: "زر الحفظ ظاهر بالكامل وقابل للنقر.",
+            actual: "الزر محجوب تحت الشريط السفلي ولا يمكن النقر عليه.",
+            evidence: "Playwright trace ولقطة شاشة (غير معروضين في هذا المثال)."
+          }
+        ]
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const lang = ['tr', 'en', 'ar'].includes(params.get('lang')) ? params.get('lang') : 'tr';
+    const dict = DATA[lang];
+
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.title = dict.title;
+    document.getElementById('lbl-lead').textContent = dict.lead;
+    document.getElementById('badge-text').textContent = dict.badge;
+    document.getElementById('lbl-app').textContent = dict.appLbl;
+    document.getElementById('val-app').textContent = dict.appName;
+    document.getElementById('lbl-verdict').textContent = dict.verdictLbl;
+    document.getElementById('val-verdict').textContent = dict.verdict;
+    document.getElementById('lbl-env').textContent = dict.envLbl;
+    document.getElementById('val-env').textContent = dict.env;
+    document.getElementById('hdr-flows').textContent = dict.hdrFlows;
+    document.getElementById('th-flow').textContent = dict.thFlow;
+    document.getElementById('th-status').textContent = dict.thStatus;
+    document.getElementById('th-note').textContent = dict.thNote;
+    document.getElementById('hdr-bugs').textContent = dict.hdrBugs;
+    document.getElementById('hdr-code').textContent = dict.hdrCode;
+    document.getElementById('lbl-ci').textContent = dict.ciLbl;
+    document.getElementById('btn-request').textContent = dict.btnRequest;
+    document.getElementById('btn-print').textContent = dict.btnPrint;
+
+    ['tr', 'en', 'ar'].forEach(l => {
+      const btn = document.getElementById('btn-' + l);
+      if (l === lang) btn.classList.add('active');
+    });
+
+    // Render flows
+    const flowsBody = document.getElementById('flows-body');
+    flowsBody.innerHTML = dict.flows.map(f => {
+      const cls = f.status === 'PASS' ? 'status-pass' : (f.status === 'WARN' ? 'status-warn' : 'status-fail');
+      return `<tr>
+        <td style="font-weight: 600;">${f.name}</td>
+        <td><span class="status-tag ${cls}">${f.status}</span></td>
+        <td style="color: var(--text-muted);">${f.note}</td>
+      </tr>`;
+    }).join('');
+
+    // Render bugs
+    const bugsContainer = document.getElementById('bugs-container');
+    bugsContainer.innerHTML = dict.bugs.map(b => `
+      <article class="bug-card">
+        <div class="bug-header">
+          <span class="bug-id">${b.id}</span>
+          <span class="bug-sev">${b.sev}</span>
+        </div>
+        <h3>${b.title}</h3>
+        <div class="field">
+          <div class="field-lbl">Adımlar / Steps</div>
+          <ol>${b.steps.map(s => `<li>${s}</li>`).join('')}</ol>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 0.5rem;">
+          <div class="field">
+            <div class="field-lbl">Beklenen / Expected</div>
+            <div style="color: var(--text-muted); font-size: 0.9rem;">${b.expected}</div>
+          </div>
+          <div class="field">
+            <div class="field-lbl">Gerçekleşen / Actual</div>
+            <div style="color: var(--text-muted); font-size: 0.9rem;">${b.actual}</div>
+          </div>
+        </div>
+        <div class="field" style="margin-top: 0.5rem;">
+          <span class="field-lbl">Kanıt / Evidence:</span>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">${b.evidence}</span>
+        </div>
+      </article>
+    `).join('');
+  </script>
+</body>
+</html>

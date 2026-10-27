@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { I18N, type Language } from './i18n';
+import { seo } from '../content/seo';
 
 type Theme = 'dark' | 'light';
 
@@ -27,6 +28,15 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = lang;
+    const s = seo[lang];
+    document.title = s.title;
+    const setMeta = (sel: string, value: string) => document.querySelector(sel)?.setAttribute('content', value);
+    setMeta('meta[name="description"]', s.description);
+    setMeta('meta[property="og:title"]', s.title);
+    setMeta('meta[property="og:description"]', s.ogDescription);
+    setMeta('meta[name="twitter:title"]', s.title);
+    setMeta('meta[name="twitter:description"]', s.ogDescription);
   }, [lang]);
 
   const toggleTheme = () => {

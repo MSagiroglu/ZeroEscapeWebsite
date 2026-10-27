@@ -1,73 +1,69 @@
-# React + TypeScript + Vite
+# Zero Escapes — QA Test Automation for AI-Built Apps
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Zero Escapes, Mustafa Sağıroğlu'nun QA test otomasyonu markasıdır. Bu depo, ana web sitesinin kaynak kodlarını içerir (Vite + React 19 + TypeScript + Tailwind CSS).
 
-Currently, two official plugins are available:
+## 🚀 Geliştirme ve Build Komutları
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+# Bağımlılıkları yükle
+npm install
 
-## React Compiler
+# Geliştirme sunucusunu başlat (HMR ile)
+npm run dev
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Tip kontrolü ve prodüksiyon bundle'ı oluştur
+npm run build
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Prodüksiyon derlemesini yerelde önizle
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Veri Odaklı Yapılar ve İçerik Yönetimi
 
-export default defineConfig([
-  globalIgnores(['dist']),
+### 1. Fiyatlar ve Hizmet Politikası (Tek Kaynak)
+Tüm paket fiyatları, saatlik oranlar, süreler ve yanıt süreleri **`src/content/pricing.ts`** dosyasında tanımlıdır.
+- Kartlar, dropdown seçenekleri, mobil sabit çubuk, SSS metinleri ve form payload'u bu yapıdan beslenir.
+- Bir rakam değiştiğinde yalnızca bu dosyayı güncellemeniz yeterlidir; sayfanın geri kalanında otomatik güncellenir.
+
+### 2. Örnek QA ve Otomasyon Raporu (`src/content/sample-report.json`)
+Sayfadaki interaktif önizleme bileşeni (`src/components/SampleReport.tsx`) ve bağımsız yazdırılabilir statik sayfa (`public/sample-qa-audit-report.html`), rapor verilerini bu dosyadan okur.
+- **Gerçek bir raporla değiştirmek için:** Tek yapmanız gereken `src/content/sample-report.json` dosyasındaki uygulama adını, akış durumlarını (`PASS`/`WARN`/`FAIL`), hata kayıtlarını ve Playwright kod örneğini güncellemektir.
+- Dürüstlük kuralı gereği, kurgusal demo raporları her zaman dürüstlük rozeti (`badge`) ile sunulur.
+
+### 3. Doğrulanmış Müşteri Yorumları (`src/content/testimonials.ts`)
+Müşteri yorumları yapay veya sahte olarak sayfaya eklenmez. Yalnızca gerçek ve doğrulanmış müşteriler gösterilir.
+- `src/content/testimonials.ts` dosyasında `testimonials` dizisi bulunur.
+- Yeni bir yorum eklerken şu yapıyı doldurun:
+  ```ts
   {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
+    name: "Müşteri Adı",
+    role: "Ünvan / Proje",
+    text: {
+      en: "English quote...",
+      tr: "Türkçe yorum...",
+      ar: "تعليق بالعربية..."
     },
-  },
-])
-```
+    photo: "https://... veya boş", // Boşsa isim baş harfleri avatar olur
+    sourceUrl: "https://linkedin.com/in/...", // Opsiyonel referans linki
+    verified: true // SADECE true ise sitede görünür
+  }
+  ```
+- Dizide `verified: true` olan hiçbir giriş yoksa bu alt bölüm sayfada hiç render edilmez (boş alan veya yer tutucu kalmaz).
+
+### 4. Açık Kaynak Playwright Şablonu Bağlantısı (`src/content/testimonials.ts`)
+- `src/content/testimonials.ts` içinde `github.starterRepoUrl` alanı yer alır.
+- Boş bırakılırsa (`''`) bağlantı sayfada hiç gösterilmez.
+- Bir açık kaynak GitHub deposu adresi girildiğinde Otorite bölümünde otomatik olarak bağlantı görünür.
+
+---
+
+## 🔒 Form Mekanizması ve Payload Sözleşmesi
+- Form başvuruları `https://formspree.io/f/mzdwlovz` endpoint'ine AJAX (`Accept: application/json`) ile gönderilir.
+- Honeypot alanı (`_gotcha`) botlara karşı gizlidir.
+- Arayüz dili ne olursa olsun, form arka planda e-posta gelen kutusunda net anlaşılması için Türkçe standart etiketler (`project_type`, `package`, `package_id`, `project_url`, `source_cta`, `lang`, `subject`) üretir.
+- Doğrulama scriptini çalıştırmak için:
+  ```bash
+  npx tsx scripts/validate-payloads.mjs
+  ```
