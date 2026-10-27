@@ -504,10 +504,16 @@ function App() {
           </a>
           <div>© {new Date().getFullYear()} Zero Escapes · Mustafa Sağıroğlu</div>
         </div>
-        <div className="flex gap-2 md:gap-6">
-          <a href="https://linkedin.com/in/mustafa-sagiroglu-manual-automation-tester" target="_blank" rel="noopener noreferrer" className="touch-manipulation block px-3 py-2 md:p-0 hover:text-primary transition-colors">LinkedIn</a>
-          <a href="https://github.com/MSagiroglu" target="_blank" rel="noopener noreferrer" className="touch-manipulation block px-3 py-2 md:p-0 hover:text-primary transition-colors">GitHub</a>
-          <a href="mailto:hello@zeroescapes.dev" className="touch-manipulation block px-3 py-2 md:p-0 hover:text-primary transition-colors">Email</a>
+        <div className="flex flex-wrap gap-3 md:gap-6 items-center">
+          <a href="/pre-launch-checklist.html" target="_blank" rel="noopener noreferrer" className="touch-manipulation hover:text-primary transition-colors">{c.footer.checklist}</a>
+          <span className="text-border">·</span>
+          <a href="/privacy.html" target="_blank" rel="noopener noreferrer" className="touch-manipulation hover:text-primary transition-colors">{c.footer.privacy}</a>
+          <span className="text-border">·</span>
+          <a href="/terms.html" target="_blank" rel="noopener noreferrer" className="touch-manipulation hover:text-primary transition-colors">{c.footer.terms}</a>
+          <span className="text-border">·</span>
+          <a href="https://linkedin.com/in/mustafa-sagiroglu-manual-automation-tester" target="_blank" rel="noopener noreferrer" className="touch-manipulation hover:text-primary transition-colors">LinkedIn</a>
+          <a href="https://github.com/MSagiroglu" target="_blank" rel="noopener noreferrer" className="touch-manipulation hover:text-primary transition-colors">GitHub</a>
+          <a href="mailto:hello@zeroescapes.dev" className="touch-manipulation hover:text-primary transition-colors">Email</a>
         </div>
       </footer>
       <StickyCta />

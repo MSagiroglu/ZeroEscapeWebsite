@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yayın Öncesi 19 Maddelik Test Kontrol Listesi | Zero Escapes</title>
+  <meta name="description" content="AI ile geliştirdiğin web uygulamasını yayına çıkarmadan önce kontrol etmen gereken 19 maddelik pratik QA test listesi.">
+  <link rel="canonical" href="https://zeroescapes.dev/pre-launch-checklist.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b111e;
+      --card-bg: #121b2d;
+      --border: #223450;
+      --text: #f1f7ff;
+      --text-muted: #8ba2c0;
+      --primary: #10b981;
+      --primary-bg: rgba(16, 185, 129, 0.1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2.5rem 1rem;
+    }
+    .container { max-width: 860px; margin: 0 auto; }
+    header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
+    .badge-bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .brand { font-weight: 700; font-size: 1.25rem; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .lang-switcher { display: flex; gap: 0.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; }
+    .lang-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .lang-btn.active { color: var(--primary); border-color: var(--primary); font-weight: bold; }
+    
+    h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.2; margin-bottom: 1rem; font-weight: 700; }
+    .intro-note {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .group-title {
+      font-size: 1.2rem;
+      margin: 2rem 0 1rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .item-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .check-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      font-size: 0.95rem;
+    }
+    .item-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--primary-bg);
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .cta-card {
+      background: var(--card-bg);
+      border: 2px solid var(--primary);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 3.5rem;
+      text-align: center;
+    }
+    .cta-card h2 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .cta-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: #060d18;
+      font-weight: 700;
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: transform 0.2s, filter 0.2s;
+    }
+    .btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+    .print-bar {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .btn-secondary:hover { color: var(--text); border-color: var(--primary); }
+
+    @media print {
+      body { background: #fff !important; color: #111 !important; padding: 0 !important; }
+      .container { max-width: 100% !important; }
+      .check-item { background: #fff !important; border: 1px solid #ddd !important; color: #111 !important; page-break-inside: avoid; }
+      .item-num { background: #eee !important; color: #111 !important; }
+      .intro-note { background: #fafafa !important; border-left: 4px solid #333 !important; color: #333 !important; }
+      .lang-switcher, .cta-card, .print-bar, .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge-bar">
+        <a href="/" class="brand">
+          <svg viewBox="0 0 40 40" fill="none" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 2.5L35.5 11.5V28.5L20 37.5L4.5 28.5V11.5L20 2.5Z" stroke="#f1f7ff" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M12 14H28L12 26H28" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Zero Escapes
+        </a>
+        <div class="lang-switcher no-print">
+          <a href="?lang=tr" class="lang-btn" id="btn-tr">Türkçe</a>
+          <a href="?lang=en" class="lang-btn" id="btn-en">English</a>
+          <a href="?lang=ar" class="lang-btn" id="btn-ar">العربية</a>
+        </div>
+      </div>
+      <h1 id="hdr-title">AI ile geliştirdiğin uygulamayı yayına çıkarmadan önce 19 maddelik test listesi</h1>
+      <div class="intro-note" id="lbl-intro">
+        Bu liste genel bir başlangıç noktasıdır; her ürünün kapsamı farklıdır ve tam bir testin yerini tutmaz.
+      </div>
+      <div class="print-bar no-print">
+        <button onclick="window.print()" class="btn-secondary" id="btn-print">🖨️ Sayfayı Yazdır / PDF Olarak Kaydet</button>
+      </div>
+    </header>
+
+    <main id="checklist-content">
+      <!-- Injected by JavaScript based on language -->
+    </main>
+
+    <div class="cta-card no-print">
+      <h2 id="cta-title">Bu listeyi senin uygulaman için ben çalıştırayım</h2>
+      <p id="cta-desc">5 kritik kullanıcı akışını Chromium, WebKit ve Firefox üzerinde test edelim; 3 iş günü içinde Pass/Warn/Fail raporunu ve öncelikli hata listesini teslim edeyim.</p>
+      <a href="/#contact" class="btn" id="cta-btn">Hızlı Vibe Check Başlat ($79)</a>
+    </div>
+  </div>
+
+  <script>
+    const DATA = {
+      tr: {
+        docTitle: "Yayın Öncesi 19 Maddelik Test Kontrol Listesi | Zero Escapes",
+        title: "AI ile geliştirdiğin uygulamayı yayına çıkarmadan önce 19 maddelik test listesi",
+        intro: "Bu liste genel bir başlangıç noktasıdır; her ürünün kapsamı farklıdır ve tam bir testin yerini tutmaz.",
+        printBtn: "🖨️ Sayfayı Yazdır / PDF Olarak Kaydet",
+        ctaTitle: "Bu listeyi senin uygulaman için ben çalıştırayım",
+        ctaDesc: "5 kritik kullanıcı akışını Chromium, WebKit ve Firefox üzerinde test edelim; 3 iş günü içinde Pass/Warn/Fail raporunu ve öncelikli hata listesini teslim edeyim.",
+        ctaBtn: "Hızlı Vibe Check Başlat ($79)",
+        groups: [
+          {
+            name: "Kimlik Doğrulama (Auth)",
+            items: [
+              { num: 1, text: "Kayıt, giriş, çıkış ve şifre sıfırlama uçtan uca çalışıyor; e-postalar gerçekten geliyor, bağlantılar süresi dolunca geçersiz oluyor." },
+              { num: 2, text: "Yanlış veya boş girişlerde anlaşılır hata mesajı çıkıyor." }
+            ]
+          },
+          {
+            name: "Ödeme ve Abonelik",
+            items: [
+              { num: 3, text: "Başarılı, başarısız ve iptal edilen ödeme senaryoları test modunda denendi." },
+              { num: 4, text: "Ödeme sonrası kullanıcının planı/yetkisi doğru güncelleniyor (ödeme bildirimi/webhook geciktiğinde de)." },
+              { num: 5, text: "İptal, iade ve plan değiştirme akışı çalışıyor." }
+            ]
+          },
+          {
+            name: "Formlar ve Veri",
+            items: [
+              { num: 6, text: "Zorunlu alan, çok uzun metin, özel karakter ve boş durum davranışları kontrol edildi." },
+              { num: 7, text: "Bir kullanıcı başka bir kullanıcının verisini görüntüleyemiyor veya değiştiremiyor (yalnızca kendi test hesaplarınla dene)." }
+            ]
+          },
+          {
+            name: "Cihaz ve Tarayıcı Uyumluluğu",
+            items: [
+              { num: 8, text: "Kritik akışlar Chrome, Safari ve Firefox'ta çalışıyor." },
+              { num: 9, text: "Telefon ekranında (yaklaşık 390 px) menü, modal ve butonlar erişilebilir; klavye açılınca butonlar kapanmıyor." }
+            ]
+          },
+          {
+            name: "Hata ve Yavaş Bağlantı",
+            items: [
+              { num: 10, text: "Yavaş bağlantıda yükleme durumları ve zaman aşımı düzgün çalışıyor." },
+              { num: 11, text: "API hatasında kullanıcıya anlaşılır mesaj gösteriliyor, sonsuz yükleme animasyonu yok." },
+              { num: 12, text: "404 ve beklenmedik hata sayfaları var." }
+            ]
+          },
+          {
+            name: "E-posta ve Bildirim",
+            items: [
+              { num: 13, text: "İşlemsel e-postalar (doğrulama, makbuz) spam'e düşmüyor, doğru dilde gidiyor." }
+            ]
+          },
+          {
+            name: "Erişilebilirlik ve Temel SEO",
+            items: [
+              { num: 14, text: "Klavyeyle gezinme, görünür odak ve yeterli kontrast var." },
+              { num: 15, text: "Sayfa başlığı, açıklama ve paylaşım görseli doğru." }
+            ]
+          },
+          {
+            name: "Yayın Güvenliği",
+            items: [
+              { num: 16, text: "Test API anahtarları canlıda kullanılmıyor, ortam değişkenleri doğru." },
+              { num: 17, text: "Hata izleme açık ve geri alma planı var." },
+              { num: 18, text: "Yayından sonra kritik akışlar canlıda bir kez daha elle kontrol edildi." }
+            ]
+          },
+          {
+            name: "AI ile Geliştirmeye Özel",
+            items: [
+              { num: 19, text: "AI ile yapılan son değişiklikten sonra eski akışlar hâlâ çalışıyor mu (regresyon) kontrol edildi." }
+            ]
+          }
+        ]
+      },
+      en: {
+        docTitle: "19-Point Pre-Launch Testing Checklist | Zero Escapes",
+        title: "19-point testing checklist before launching your AI-built application",
+        intro: "This checklist is a general starting point; every product's scope differs and it does not replace a comprehensive test.",
+        printBtn: "🖨️ Print Page / Save as PDF",
+        ctaTitle: "Let me run this checklist for your app",
+        ctaDesc: "We test up to 5 critical user journeys across Chromium, WebKit and Firefox; deliver a Pass/Warn/Fail audit report and prioritized defect list within 3 business days.",
+        ctaBtn: "Start a Quick Vibe Check ($79)",
+        groups: [
+          {
+            name: "Authentication",
+            items: [
+              { num: 1, text: "Sign-up, sign-in, sign-out and password reset work end-to-end; transactional emails arrive and links expire properly." },
+              { num: 2, text: "Clear, understandable error messages appear on invalid or empty submissions." }
+            ]
+          },
+          {
+            name: "Payment & Subscription",
+            items: [
+              { num: 3, text: "Successful, failed, and canceled checkout scenarios have been tested in sandbox mode." },
+              { num: 4, text: "User tier/entitlements update correctly post-payment (even when webhook events are delayed)." },
+              { num: 5, text: "Cancellation, refunds, and tier upgrade/downgrade journeys work properly." }
+            ]
+          },
+          {
+            name: "Forms & Data Handling",
+            items: [
+              { num: 6, text: "Mandatory fields, oversized strings, special characters, and empty states behave cleanly." },
+              { num: 7, text: "Tenants/users cannot view or alter another user's records (tested strictly with your own sandbox accounts)." }
+            ]
+          },
+          {
+            name: "Device & Browser Compatibility",
+            items: [
+              { num: 8, text: "Critical user journeys operate smoothly across Chrome, Safari, and Firefox." },
+              { num: 9, text: "On mobile viewports (~390px), navigation menus, modals, and buttons remain accessible; on-screen keyboard does not trap actions." }
+            ]
+          },
+          {
+            name: "Error States & Latency",
+            items: [
+              { num: 10, text: "Loading skeletons and timeouts handle throttled network conditions gracefully." },
+              { num: 11, text: "API errors display user-friendly fallbacks instead of indefinite spinner freezes." },
+              { num: 12, text: "Clean 404 not-found and unexpected error boundary pages exist." }
+            ]
+          },
+          {
+            name: "Email & Notifications",
+            items: [
+              { num: 13, text: "Transactional notifications (verification, receipts) land in the inbox without spam flags, in the user's selected language." }
+            ]
+          },
+          {
+            name: "Accessibility & Basic SEO",
+            items: [
+              { num: 14, text: "Keyboard navigation, visible focus indicators, and WCAG AA contrast standards are satisfied." },
+              { num: 15, text: "Page title, meta descriptions, and social graph cards (OG/Twitter) are configured." }
+            ]
+          },
+          {
+            name: "Deployment & Hygiene",
+            items: [
+              { num: 16, text: "Sandbox/test API keys are removed from production and environment variables are verified." },
+              { num: 17, text: "Error monitoring (Sentry/LogRocket) is connected with an explicit rollback runbook." },
+              { num: 18, text: "Critical user journeys are sanity-checked once live in production." }
+            ]
+          },
+          {
+            name: "Specific to AI-Assisted Builds",
+            items: [
+              { num: 19, text: "Legacy flows still function properly after the latest AI-generated prompt modifications (regression check)." }
+            ]
+          }
+        ]
+      },
+      ar: {
+        docTitle: "قائمة فحص من 19 نقطة قبل إطلاق التطبيق | Zero Escapes",
+        title: "قائمة فحص من 19 نقطة لاختبار تطبيقك المبني بالذكاء الاصطناعي قبل الإطلاق",
+        intro: "هذه القائمة نقطة انطلاق عامة؛ يختلف نطاق كل منتج ولا تغني عن اختبار كامل وشامل.",
+        printBtn: "🖨️ طباعة الصفحة / حفظ كـ PDF",
+        ctaTitle: "دعني أطبّق هذه القائمة على تطبيقك",
+        ctaDesc: "نختبر حتى 5 مسارات حرجة على Chromium وWebKit وFirefox؛ ونسلّم تقرير فحص وقائمة أخطاء مرتبة خلال 3 أيام عمل.",
+        ctaBtn: "ابدأ Vibe Check سريعًا ($79)",
+        groups: [
+          {
+            name: "المصادقة (Auth)",
+            items: [
+              { num: 1, text: "التسجيل وتسجيل الدخول والخروج واستعادة كلمة المرور تعمل بالكامل؛ رسائل البريد تصل وتنتهي صلاحية الروابط في وقتها." },
+              { num: 2, text: "ظهور رسائل خطأ واضحة ومفهومة عند الإدخال الخاطئ أو الفارغ." }
+            ]
+          },
+          {
+            name: "الدفع والاشتراكات",
+            items: [
+              { num: 3, text: "تم اختبار سيناريوهات الدفع الناجح والفاشل والملغى في الوضع التجريبي." },
+              { num: 4, text: "تحديث خطة وصلاحيات المستخدم بعد الدفع بشكل صحيح (حتى مع تأخر إشعار الـ webhook)." },
+              { num: 5, text: "عملية الإلغاء والاسترداد وتغيير الخطة تعمل كما يجب." }
+            ]
+          },
+          {
+            name: "النماذج والبيانات",
+            items: [
+              { num: 6, text: "فحص الحقول الإلزامية والنصوص الطويلة والرموز الخاصة والحالات الفارغة." },
+              { num: 7, text: "لا يمكن لمستخدم عرض أو تعديل بيانات مستخدم آخر (يُجرى فقط بحساباتك التجريبية)." }
+            ]
+          },
+          {
+            name: "توافق الأجهزة والمتصفحات",
+            items: [
+              { num: 8, text: "المسارات الحرجة تعمل بسلاسة على Chrome وSafari وFirefox." },
+              { num: 9, text: "على شاشات الجوال (~390px)، القوائم والنوافذ المنبثقة والأزرار قابلة للوصول ولا تُحجب عند فتح لوحة المفاتيح." }
+            ]
+          },
+          {
+            name: "حالات الخطأ وبطء الاتصال",
+            items: [
+              { num: 10, text: "شاشات التحميل وحالات المهلة الزمنية تعمل بصورة صحيحة عند بطء الشبكة." },
+              { num: 11, text: "عرض رسائل واضحة عند فشل الـ API دون الدخول في تجميد أو دوران لا نهائي." },
+              { num: 12, text: "وجود صفحات واضحة لخطأ 404 والأخطاء غير المتوقعة." }
+            ]
+          },
+          {
+            name: "البريد الإلكتروني والإشعارات",
+            items: [
+              { num: 13, text: "رسائل التحقق والفواتير تصل إلى صندوق الوارد دون تصنيفها كرسائل غير مرغوب فيها، باللغة الصحيحة." }
+            ]
+          },
+          {
+            name: "إمكانية الوصول والـ SEO الأساسي",
+            items: [
+              { num: 14, text: "التنقل بلوحة المفاتيح، والتركيز الظاهر، وتحقيق معايير التباين الكافية." },
+              { num: 15, text: "عناوين الصفحات والأوصاف وبطاقات المشاركة في شبكات التواصل الاجتماعي صحيحة." }
+            ]
+          },
+          {
+            name: "أمان الإطلاق والبيئة",
+            items: [
+              { num: 16, text: "عدم استخدام مفاتيح API التجريبية في البيئة الحية وصحة المتغيرات البيئية." },
+              { num: 17, text: "تفعيل تتبع الأخطاء ووجود خطة تراجع واضحة." },
+              { num: 18, text: "إجراء فحص يدوي للمسارات الحرجة على البيئة الحية مباشرة بعد الإطلاق." }
+            ]
+          },
+          {
+            name: "خاص بالتطوير بالذكاء الاصطناعي",
+            items: [
+              { num: 19, text: "التأكد من أن المسارات القديمة ما زالت تعمل (عدم حدوث انحدار) بعد آخر تعديل ناتج عن الذكاء الاصطناعي." }
+            ]
+          }
+        ]
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const lang = ['tr', 'en', 'ar'].includes(params.get('lang')) ? params.get('lang') : 'tr';
+    const dict = DATA[lang];
+
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.title = dict.docTitle;
+    document.getElementById('hdr-title').textContent = dict.title;
+    document.getElementById('lbl-intro').textContent = dict.intro;
+    document.getElementById('btn-print').textContent = dict.printBtn;
+    document.getElementById('cta-title').textContent = dict.ctaTitle;
+    document.getElementById('cta-desc').textContent = dict.ctaDesc;
+    document.getElementById('cta-btn').textContent = dict.ctaBtn;
+
+    ['tr', 'en', 'ar'].forEach(l => {
+      const btn = document.getElementById('btn-' + l);
+      if (l === lang) btn.classList.add('active');
+    });
+
+    const content = document.getElementById('checklist-content');
+    content.innerHTML = dict.groups.map(g => `
+      <section>
+        <h2 class="group-title">${g.name}</h2>
+        <ul class="item-list">
+          ${g.items.map(it => `
+            <li class="check-item">
+              <span class="item-num">${it.num}</span>
+              <div>${it.text}</div>
+            </li>
+          `).join('')}
+        </ul>
+      </section>
+    `).join('');
+  </script>
+</body>
+</html>

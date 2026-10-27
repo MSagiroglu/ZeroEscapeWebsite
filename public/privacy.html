@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gizlilik Bildirimi (KVKK & GDPR Bilgilendirmesi) | Zero Escapes</title>
+  <meta name="description" content="Zero Escapes gizlilik bildirimi, KVKK ve GDPR kapsamında veri işleme ilkeleri.">
+  <link rel="canonical" href="https://zeroescapes.dev/privacy.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b111e;
+      --card-bg: #121b2d;
+      --border: #223450;
+      --text: #f1f7ff;
+      --text-muted: #8ba2c0;
+      --primary: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Sora', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 2.5rem 1rem; }
+    .container { max-width: 800px; margin: 0 auto; }
+    header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
+    .badge-bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .brand { font-weight: 700; font-size: 1.25rem; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .lang-switcher { display: flex; gap: 0.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; }
+    .lang-btn { background: var(--card-bg); border: 1px solid var(--border); color: var(--text-muted); padding: 0.35rem 0.75rem; border-radius: 6px; cursor: pointer; text-decoration: none; }
+    .lang-btn.active { color: var(--primary); border-color: var(--primary); font-weight: bold; }
+    h1 { font-size: clamp(1.8rem, 3.5vw, 2.2rem); margin-bottom: 1rem; }
+    h2 { font-size: 1.3rem; margin: 2rem 0 0.75rem; color: var(--primary); }
+    p, li { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.75rem; }
+    ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+    .box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin: 1.5rem 0; }
+    a { color: var(--primary); text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge-bar">
+        <a href="/" class="brand">
+          <svg viewBox="0 0 40 40" fill="none" width="24" height="24">
+            <path d="M20 2.5L35.5 11.5V28.5L20 37.5L4.5 28.5V11.5L20 2.5Z" stroke="#f1f7ff" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M12 14H28L12 26H28" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Zero Escapes
+        </a>
+        <div class="lang-switcher">
+          <a href="?lang=tr" class="lang-btn" id="btn-tr">Türkçe</a>
+          <a href="?lang=en" class="lang-btn" id="btn-en">English</a>
+          <a href="?lang=ar" class="lang-btn" id="btn-ar">العربية</a>
+        </div>
+      </div>
+      <h1 id="doc-title">Gizlilik Bildirimi (KVKK & GDPR)</h1>
+      <p id="doc-sub">Son güncelleme: Ekim 2026</p>
+    </header>
+
+    <main id="content">
+      <!-- Injected by JS -->
+    </main>
+
+    <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text-muted); text-align: center;">
+      <p>© 2026 Zero Escapes · Mustafa Sağıroğlu · <a href="/">Ana Sayfa</a> · <a href="/terms.html">Hizmet Şartları</a></p>
+    </footer>
+  </div>
+
+  <script>
+    const DATA = {
+      tr: {
+        docTitle: "Gizlilik Bildirimi (KVKK & GDPR) | Zero Escapes",
+        title: "Gizlilik Bildirimi (KVKK & GDPR)",
+        sub: "Son güncelleme: Ekim 2026 · Sade ve Şeffaf İlkeler",
+        body: `
+          <h2>1. Genel Bakış ve Veri Sorumlusu</h2>
+          <p>Zero Escapes, Mustafa Sağıroğlu tarafından sunulan bağımsız bir QA test otomasyonu ve danışmanlık hizmetidir. Bu bildirim, web sitemiz (zeroescapes.dev) ve iletişim kanallarımız üzerinden bizimle paylaştığınız verilerin KVKK ve GDPR ilkeleri uyarınca nasıl toplandığını ve işlendiğini açıklar.</p>
+          <p>İletişim: <a href="mailto:hello@zeroescapes.dev">hello@zeroescapes.dev</a></p>
+
+          <h2>2. Toplanan Veriler ve Toplama Amacı</h2>
+          <p>Web sitemiz üzerinden yalnızca iletişim ve teklif oluşturma amacıyla gönüllü olarak girdiğiniz bilgiler toplanır:</p>
+          <ul>
+            <li><strong>Ad Soyad:</strong> Size hitap edebilmek için.</li>
+            <li><strong>E-posta Adresi:</strong> Talebinize yanıt vermek, teklif ve test raporlarını iletmek için.</li>
+            <li><strong>Proje Türü ve İlgilenilen Paket:</strong> Talebinizin kapsamını doğru değerlendirebilmek için.</li>
+            <li><strong>Uygulama / Canlı Önizleme Adresi:</strong> İnceleme ve test hazırlığı yapabilmek için.</li>
+            <li><strong>Mesaj İçeriği:</strong> Projenizin kritik akışlarını ve hedeflerinizi anlamak için.</li>
+          </ul>
+          <p>Kişisel veri niteliğindeki şifreler, gizli API anahtarları veya canlı kullanıcı verileri bu form üzerinden toplanmaz; forma yazılmaması rica olunur.</p>
+
+          <h2>3. Form Sağlayıcısı ve Veri Aktarımı</h2>
+          <p>İletişim formumuz, güvenli form işleme altyapısı sunan Formspree üzerinden çalışmaktadır. Formspree, form verilerinizi e-posta bildirimine dönüştürmek amacıyla güvenli biçimde işler. Verileriniz hiçbir koşulda üçüncü taraf pazarlama şirketlerine satılmaz veya devredilmez.</p>
+
+          <h2>4. Kod, Test Verisi ve Rapor Gizliliği</h2>
+          <p>Test kapsamında paylaşılan kaynak kodlar, demo ortamları, hata raporları ve otomasyon test süitleri tamamen gizli tutulur. Müşterinin yazılı izni olmadan hiçbir proje çıktısı veya müşteri verisi referans/örnek olarak üçüncü kişilerle paylaşılmaz. Talep halinde çalışma öncesinde karşılıklı Gizlilik Sözleşmesi (NDA) imzalanır.</p>
+
+          <h2>5. Test İzni ve Kapsam Sınırı</h2>
+          <p>Zero Escapes, yalnızca mülkiyeti size ait olan veya test edilmesi için yazılı izin verilmiş uygulamalar üzerinde fonksiyonel QA testleri gerçekleştirir. Hizmetlerimiz güvenlik ve sızma (penetration) testi kapsamında değildir.</p>
+
+          <h2>6. Haklarınız</h2>
+          <p>KVKK ve GDPR kapsamında, bizimle iletişime geçerek sistemimizde tutulan iletişim verilerinizin silinmesini, güncellenmesini veya tarafınıza iletilmesini talep etme hakkına sahipsiniz. Talepleriniz için: <a href="mailto:hello@zeroescapes.dev">hello@zeroescapes.dev</a>.</p>
+        `
+      },
+      en: {
+        docTitle: "Privacy Notice (GDPR & Data Protection) | Zero Escapes",
+        title: "Privacy Notice (GDPR & Data Protection)",
+        sub: "Last updated: October 2026 · Transparent & Minimal Data Handling",
+        body: `
+          <h2>1. Overview and Contact</h2>
+          <p>Zero Escapes is an independent QA automation consultancy operated by Mustafa Sağıroğlu. This notice explains how data submitted via zeroescapes.dev is handled under applicable GDPR principles.</p>
+          <p>Direct contact: <a href="mailto:hello@zeroescapes.dev">hello@zeroescapes.dev</a></p>
+
+          <h2>2. Data Collected and Purpose</h2>
+          <p>We only collect information voluntarily submitted through the project inquiry form:</p>
+          <ul>
+            <li><strong>Full Name:</strong> To address you in communications.</li>
+            <li><strong>Email Address:</strong> To reply to your inquiry, deliver proposals, and send test reports.</li>
+            <li><strong>Project Type and Selected Package:</strong> To evaluate project scope.</li>
+            <li><strong>Application / Preview URL:</strong> To inspect and prepare test suites.</li>
+            <li><strong>Message Details:</strong> To understand critical user journeys and requirements.</li>
+          </ul>
+          <p>We do not collect passwords, production API keys, or live customer credentials via web forms.</p>
+
+          <h2>3. Service Providers & Third Parties</h2>
+          <p>Our contact form is processed through Formspree, which securely relays submissions to our inbox. We never sell, rent, or monetize your contact information.</p>
+
+          <h2>4. Code, Test Data, and Report Confidentiality</h2>
+          <p>All repository access, test artifacts, bug tickets, and Playwright code delivered during engagements are kept strictly confidential. Non-Disclosure Agreements (NDAs) are available upon request prior to repository access.</p>
+
+          <h2>5. Authorization Boundary</h2>
+          <p>Testing is conducted exclusively on applications you own or for which explicit written authorization has been granted. Services are restricted to functional QA and do not constitute offensive security or penetration testing.</p>
+
+          <h2>6. Your Rights</h2>
+          <p>You may request deletion, review, or correction of your inquiry communications at any time by emailing <a href="mailto:hello@zeroescapes.dev">hello@zeroescapes.dev</a>.</p>
+        `
+      },
+      ar: {
+        docTitle: "إشعار الخصوصية | Zero Escapes",
+        title: "إشعار الخصوصية وحماية البيانات",
+        sub: "آخر تحديث: أكتوبر 2026 · مبادئ واضحة ومباشرة",
+        body: `
+          <h2>1. نظرة عامة</h2>
+          <p>Zero Escapes هي خدمة استشارية مستقلة لأتمتة وضمان الجودة يقدمها مصطفى صاغيروغلو. يوضح هذا الإشعار كيفية التعامل مع البيانات المرسلة عبر zeroescapes.dev وفق مبادئ الخصوصية وحماية البيانات.</p>
+          <p>للتواصل: <a href="mailto:hello@zeroescapes.dev">hello@zeroescapes.dev</a></p>
+
+          <h2>2. البيانات التي يتم جمعها</h2>
+          <p>نجمع فقط البيانات التي ترسلها طوعًا في نموذج التواصل لغرض تقديم العروض والتواصل الفني (الاسم، البريد الإلكتروني، نوع المشروع، رابط التطبيق، وتفاصيل المسارات المطلوبة). لا تجمع النماذج كلمات مرور أو بيانات حساسة.</p>
+
+          <h2>3. سرية الكود والتقارير</h2>
+          <p>جميع التقارير وأكواد الاختبار والمسارات التي يتم فحصها تعامل بسرية تامة وتسلَّم لصاحب المشروع وحده. يمكن توقيع اتفاقية سرية (NDA) قبل بدء العمل.</p>
+
+          <h2>4. حدود إذن الفحص</h2>
+          <p>يُجرى الفحص فقط على التطبيقات التي تملكها أو لديك إذن كتابي باختبارها. خدماتنا وظيفية ولا تشمل اختبارات الاختراق أو الأمان الهجومي.</p>
+
+          <h2>5. حقوقك</h2>
+          <p>يحق لك طلب حذف أو مراجعة بيانات التواصل الخاصة بك في أي وقت عبر مراسلتنا على: <a href="mailto:hello@zeroescapes.dev">hello@zeroescapes.dev</a>.</p>
+        `
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const lang = ['tr', 'en', 'ar'].includes(params.get('lang')) ? params.get('lang') : 'tr';
+    const dict = DATA[lang];
+
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.title = dict.docTitle;
+    document.getElementById('doc-title').textContent = dict.title;
+    document.getElementById('doc-sub').textContent = dict.sub;
+    document.getElementById('content').innerHTML = dict.body;
+
+    ['tr', 'en', 'ar'].forEach(l => {
+      const btn = document.getElementById('btn-' + l);
+      if (l === lang) btn.classList.add('active');
+    });
+  </script>
+</body>
+</html>

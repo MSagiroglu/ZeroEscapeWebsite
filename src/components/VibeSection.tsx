@@ -80,6 +80,11 @@ export function VibeSection() {
 
       <p className="mt-4 text-xs md:text-sm text-muted-foreground">{v.tools}</p>
       <p className="mt-2 text-xs md:text-sm text-foreground font-medium">{v.consent}</p>
+      <div className="mt-4 pt-3 border-t border-border/50 flex items-center justify-between flex-wrap gap-2 text-xs font-mono">
+        <a href="/pre-launch-checklist.html" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center gap-1.5 font-semibold">
+          <span>📋</span> {v.checklistLink} →
+        </a>
+      </div>
     </section>
   )
 }
