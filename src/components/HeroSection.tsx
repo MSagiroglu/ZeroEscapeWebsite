@@ -1,11 +1,21 @@
 import { useRef } from "react"
 import { useAppContext } from "../lib/Context"
+import { useCopy } from "../lib/useCopy"
+import { openForm } from "../lib/formBus"
 
 export function HeroSection() {
-  const { t, theme } = useAppContext()
+  const { theme } = useAppContext()
+  const { c } = useCopy()
+  const h = c.hero
   const heroRef = useRef<HTMLElement>(null)
 
   const isLight = theme === "light"
+
+  const goToSample = (e: React.MouseEvent) => {
+    e.preventDefault()
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    document.getElementById("sample-report")?.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" })
+  }
 
   return (
     <section
@@ -54,14 +64,14 @@ export function HeroSection() {
           className="mb-2 text-[clamp(3rem,8vw,6rem)] font-bold uppercase leading-[1.05] tracking-[-0.05em] text-foreground opacity-0 animate-fade-up drop-shadow-sm md:mb-4"
           style={{ animationDelay: "0.2s" }}
         >
-          {t("h1_1")} <span className="text-primary">{t("h1_2")}</span>
+          {h.h1a} <span className="text-primary">{h.h1b}</span>
         </h1>
 
         <p
           className="mb-3 text-[clamp(1.125rem,2.5vw,1.875rem)] font-light text-foreground/90 opacity-0 animate-fade-up md:mb-6"
           style={{ animationDelay: "0.4s" }}
         >
-          {t("hp_subtitle")}
+          {h.sub1}
         </p>
 
         <p
@@ -70,24 +80,28 @@ export function HeroSection() {
           }`}
           style={{ animationDelay: "0.55s" }}
         >
-          {t("hp_desc")}
+          {h.sub2}
         </p>
 
         <div
           className="pointer-events-auto flex flex-wrap gap-3 font-bold opacity-0 animate-fade-up"
           style={{ animationDelay: "0.7s" }}
         >
-          <a
-            href="#packages"
+          <button
+            id="hero-cta-primary"
+            type="button"
+            onClick={() => openForm({ packageId: "vibe-check", projectType: "vibe", source: "hero" })}
             className="inline-flex items-center justify-center cursor-pointer rounded-sm bg-primary px-6 py-3 text-sm text-primary-foreground transition-all hover:brightness-110 active:scale-[0.97] md:px-8 md:py-4"
           >
-            {t("btn_packages")}
-          </a>
+            {h.cta}
+          </button>
           <a
-            href="#contact"
-            className="inline-flex items-center justify-center cursor-pointer rounded-sm bg-foreground px-6 py-3 text-sm text-background transition-all hover:brightness-125 active:scale-[0.97] dark:hover:brightness-90 md:px-8 md:py-4"
+            id="hero-cta-secondary"
+            href="#sample-report"
+            onClick={goToSample}
+            className="inline-flex items-center justify-center cursor-pointer rounded-sm border border-foreground/40 px-6 py-3 text-sm text-foreground transition-all hover:border-primary hover:text-primary active:scale-[0.97] md:px-8 md:py-4"
           >
-            {t("btn_tell_project")}
+            {h.ctaSecondary}
           </a>
         </div>
 
@@ -97,14 +111,14 @@ export function HeroSection() {
         >
           <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 font-mono text-[11px] font-semibold text-primary">
             <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-            {t("istqb_badge")}
+            {h.trust[0]}
           </span>
           <p
-            className={`text-xs font-light ${
-              isLight ? "text-foreground/65" : "text-muted-foreground/60"
+            className={`text-xs ${
+              isLight ? "text-foreground/75" : "text-muted-foreground"
             }`}
           >
-            {t("trust_line")}
+            {h.trust[1]} · {h.trust[2]}
           </p>
         </div>
       </div>

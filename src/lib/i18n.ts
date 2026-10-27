@@ -4,11 +4,11 @@ export const I18N = {
     
     // Hero
     h1_1: "Ship with", h1_2: "confidence.",
-    hp_subtitle: "End-to-end test automation, performance benchmarks & CI/CD integration.",
+    hp_subtitle: "End-to-end test automation and CI/CD integration.",
     hp_desc: "You write the features, we protect quality. Fewer regressions, accelerated release cycles, and dependable production deployments.",
     btn_call: "Book a Call", btn_work: "My Works",
     btn_packages: "View Packages", btn_tell_project: "Discuss My Project",
-    trust_line: "ISTQB Certified QA Partner. 1,500+ test scenarios shipped worldwide.",
+    trust_line: "ISTQB Certified Tester, Foundation Level. 1,500+ test scenarios.",
     
     // Authority & ISTQB
     istqb_badge: "ISTQB Certified Tester, Foundation Level",
@@ -17,9 +17,9 @@ export const I18N = {
     // Why Zero Escapes
     why_lbl: "Why Zero Escapes", why_title: "Your bugs stop here.", why_sub: "Here's why clients choose me.", why_desc: "I'm not just a QA engineer — I'm a strategic quality partner who treats your codebase like my own product.",
     w1_t: "Framework Architect, Not Script Writer", w1_d: "Scalable POM architectures with Playwright + TypeScript. Greenfield to legacy rescue — maintainable, not brittle.",
-    w2_t: "CI/CD Native — Shift-Left Expert", w2_d: "Testing in your pipeline from day one. Every PR gets a full regression run before merge.",
-    w3_t: "Full-Stack Quality Coverage", w3_d: "API with Postman/Newman, E2E with Playwright/Cypress, mobile with Appium, load with JMeter.",
-    w4_t: "ISTQB Certified & AI-Augmented", w4_d: "Internationally certified. Actively uses Claude Code, Codex and Gemini to accelerate delivery.",
+    w2_t: "CI/CD Native — Shift-Left Expert", w2_d: "Testing in your pipeline from the start, so changes are checked before they merge.",
+    w3_t: "Full-Stack Quality Coverage", w3_d: "API testing, E2E with Playwright and browser compatibility checks. Cypress and Selenium experience for existing suites.",
+    w4_t: "ISTQB Certified Tester, Foundation Level", w4_d: "Certified at Foundation Level. Uses AI tools to speed up test creation.",
     w5_t: "Agile-First, Sprint-Aligned", w5_d: "Standups, story refinement, BDD/Gherkin acceptance criteria. Tests become living documentation.",
     w6_t: "Management-Ready Reporting", w6_d: "Defect trends, release readiness scorecards, exec dashboards — for engineers and C-suite.",
     
@@ -32,7 +32,7 @@ export const I18N = {
     
     // Packages
     pkg_lbl: "Service Packages", pkg_title: "Transparent Quality Plans", pkg_sub: "Tailored for solo builders, fast startups, and enterprise teams.",
-    pkg_popular: "Most Popular", pkg_quote: "Get a Quote", pkg_cta: "Get Started",
+    pkg_popular: "Recommended", pkg_quote: "Get a Quote", pkg_cta: "Get Started",
     pkg_response_time: "First response & discovery within 24 hours",
     
     pkg1_name: "Indie / Individual",
@@ -64,7 +64,7 @@ export const I18N = {
     pkg3_model: "Dedicated retainer or enterprise contract",
     pkg3_f1: "Enterprise QA framework & shift-left strategy",
     pkg3_f2: "Cross-browser & cross-platform coverage",
-    pkg3_f3: "Performance & load testing (JMeter / k6)",
+    pkg3_f3: "Cross-browser coverage",
     pkg3_f4: "Multi-pipeline CI/CD (GitHub Actions / Jenkins)",
     pkg3_f5: "Executive defect scorecards & C-suite metrics",
     pkg3_f6: "Custom SLA & priority issue resolution",
@@ -112,8 +112,8 @@ export const I18N = {
     svc_lbl: "Services", svc_title: "What I deliver", svc_sub: "end-to-end.",
     svc1_t: "QA Framework Build", svc1_d: "Full Playwright + TypeScript with POM, custom commands, CI/CD integration and team onboarding docs.",
     svc2_t: "Legacy Framework Rescue", svc2_d: "Audit, refactor, modernize — from flaky Selenium to stable Playwright. Eliminate flakiness, restore confidence.",
-    svc3_t: "Mobile Automation", svc3_d: "iOS + Android E2E suites with Appium. Real device testing, parallel execution, CI integration.",
-    svc4_t: "API Testing & Validation", svc4_d: "REST/GraphQL suites with Postman + Newman in CI. Schema validation and JMeter benchmarks.",
+    svc3_t: "Mobile Automation", svc3_d: "Native mobile automation with Appium, offered as a custom scope: clarified in a call and priced hourly or by quote.",
+    svc4_t: "API Testing & Validation", svc4_d: "REST tests with Playwright and API checks that run in CI.",
     
     // Portfolio
     port_lbl: "Case Studies", port_title: "Shipped work.", port_sub: "Measurable results.",
@@ -150,7 +150,7 @@ export const I18N = {
     faq6_q: "What is your working model and communication rhythm?", faq6_a: "100% remote worldwide. We align via Slack/Teams, asynchronous sprint updates, and weekly progress demos. First inquiries are answered within 24 hours.",
     
     // Contact & CTA
-    cta_title: "Ready to ship with", cta_title_em: "confidence?", cta_p: "Fill out the form with your project details or select a package. 30-minute discovery call, no commitment.",
+    cta_title: "Ready to ship with", cta_title_em: "confidence?", cta_p: "Fill out the form with your project details or pick a package. First reply within {respDays} business day.",
     guar_1: "First response within 24 hours", guar_2: "Worldwide Remote",
     form_type_lbl: "Project Type", form_type_indie: "Indie / Individual Project", form_type_b2b: "Company / Team Project",
     form_pkg_lbl: "Interested Package", form_pkg_indie: "Indie / Individual", form_pkg_startup: "Startup / Team", form_pkg_enterprise: "Enterprise / Corporate", form_pkg_custom: "Custom Scope",
@@ -160,7 +160,7 @@ export const I18N = {
     contact_email_direct: "Direct Inquiries: hello@zeroescapes.dev",
     btn_submit: "Submit Request",
     
-    footer_copy: "QA Automation Architect · 5+ years · ISTQB Certified · Worldwide remote."
+    footer_copy: "QA Automation Architect · 5+ years · ISTQB Certified Tester, Foundation Level · Worldwide remote."
   },
   
   tr: {
@@ -168,11 +168,11 @@ export const I18N = {
     
     // Hero
     h1_1: "Güvenle", h1_2: "yayına çıkın.",
-    hp_subtitle: "Uçtan uca test otomasyonu, performans testleri ve CI/CD entegrasyonu.",
+    hp_subtitle: "Uçtan uca test otomasyonu ve CI/CD entegrasyonu.",
     hp_desc: "Siz yeni özellikler geliştirin, kaliteyi biz güvence altına alalım. Daha az regresyon, daha hızlı sürümler, güvenle deploy.",
     btn_call: "Görüşme Ayarla", btn_work: "Projelerim",
     btn_packages: "Paketleri İncele", btn_tell_project: "Projemi Anlatmak İstiyorum",
-    trust_line: "ISTQB Sertifikalı QA Ortağınız. Dünya genelinde 1.500+ test senaryosu.",
+    trust_line: "ISTQB Certified Tester, Foundation Level. 1,500+ test senaryosu.",
     
     // Authority & ISTQB
     istqb_badge: "ISTQB Certified Tester, Foundation Level",
@@ -181,9 +181,9 @@ export const I18N = {
     // Why Zero Escapes
     why_lbl: "Neden Zero Escapes", why_title: "Hatalar burada biter.", why_sub: "Müşterilerin beni seçme sebebi.", why_desc: "Sadece bir QA mühendisi değilim — kod tabanınızı kendi ürünüm gibi ele alan stratejik bir kalite ortağıyım.",
     w1_t: "Test Mimarı, Senaryo Yazarı Değil", w1_d: "Playwright + TypeScript ile ölçeklenebilir POM mimarileri. Sıfırdan veya mevcut sistemi iyileştirme.",
-    w2_t: "CI/CD Uzmanı — Shift-Left", w2_d: "Testleri ilk günden pipeline'a entegre ederim. Her PR (kod gönderimi) öncesi tam regresyon koşulur.",
-    w3_t: "Tam Kapsamlı Kalite Güvence", w3_d: "Postman/Newman ile API, Playwright/Cypress ile E2E, Appium ile mobil, JMeter ile yük testleri.",
-    w4_t: "ISTQB Sertifikalı & AI Destekli", w4_d: "Uluslararası sertifikalı. Süreçleri hızlandırmak için Claude Code, Codex ve Gemini'yi aktif kullanır.",
+    w2_t: "CI/CD Uzmanı — Shift-Left", w2_d: "Testler baştan itibaren pipeline'ında çalışır; değişiklikler merge edilmeden önce kontrol edilir.",
+    w3_t: "Tam Kapsamlı Kalite Güvence", w3_d: "API testi, Playwright ile E2E ve tarayıcı uyumluluk kontrolleri. Mevcut süitler için Cypress ve Selenium deneyimi.",
+    w4_t: "ISTQB Certified Tester, Foundation Level", w4_d: "Foundation seviyesinde sertifikalı. Test oluşturmayı hızlandırmak için AI araçlarını kullanır.",
     w5_t: "Agile ve Sprint Uyumlu", w5_d: "Standup'lar, BDD/Gherkin kabul kriterleri. Testler yaşayan bir dokümantasyona dönüşür.",
     w6_t: "Yönetime Hazır Raporlama", w6_d: "Hata trendleri, sürüm hazırbulunuşluk karneleri — mühendisler ve yöneticiler için Allure dashboard'ları.",
     
@@ -196,7 +196,7 @@ export const I18N = {
     
     // Packages
     pkg_lbl: "Hizmet Paketleri", pkg_title: "Şeffaf Kalite Paketleri", pkg_sub: "Bireysel geliştiriciler, büyüyen startup'lar ve kurumsal ekipler için.",
-    pkg_popular: "En Popüler", pkg_quote: "Teklif Alın", pkg_cta: "Hemen Başla",
+    pkg_popular: "Önerilen", pkg_quote: "Teklif Alın", pkg_cta: "Hemen Başla",
     pkg_response_time: "24 saat içinde ilk keşif & yanıt süresi",
     
     pkg1_name: "Indie / Bireysel",
@@ -228,7 +228,7 @@ export const I18N = {
     pkg3_model: "Özel retainer veya kurumsal sözleşme",
     pkg3_f1: "Kurumsal QA mimarisi ve shift-left stratejisi",
     pkg3_f2: "Çoklu tarayıcı ve platform desteği",
-    pkg3_f3: "Performans ve yük testleri (JMeter)",
+    pkg3_f3: "Çoklu tarayıcı kapsamı",
     pkg3_f4: "Çoklu pipeline CI/CD (GitHub Actions / Jenkins)",
     pkg3_f5: "Yönetici hata trendleri ve C-suite metrikleri",
     pkg3_f6: "Özel SLA ve öncelikli müdahale garantisi",
@@ -276,8 +276,8 @@ export const I18N = {
     svc_lbl: "Hizmetler", svc_title: "Uçtan uca", svc_sub: "ne teslim ediyorum.",
     svc1_t: "QA Altyapı Kurulumu", svc1_d: "POM, özel komutlar, CI/CD entegrasyonu ve ekip eğitim dokümanlarıyla tam Playwright + TypeScript altyapısı.",
     svc2_t: "Eski Sistem Kurtarma (Refactor)", svc2_d: "Denetim, yeniden yazım, modernizasyon — dengesiz Selenium'dan kararlı Playwright'a geçiş.",
-    svc3_t: "Mobil Otomasyon", svc3_d: "Appium ile iOS + Android E2E setleri. Gerçek cihaz testleri, paralel çalışma, CI entegrasyonu.",
-    svc4_t: "API Testi ve Doğrulama", svc4_d: "CI üzerinde Postman + Newman ile REST/GraphQL setleri. Şema doğrulaması ve JMeter metrikleri.",
+    svc3_t: "Mobil Otomasyon", svc3_d: "Appium ile native mobil otomasyon; özel kapsam olarak sunulur: görüşmede netleştirilir, saatlik oranla veya teklifle fiyatlandırılır.",
+    svc4_t: "API Testi ve Doğrulama", svc4_d: "Playwright ile REST testleri ve CI'da çalışan API kontrolleri.",
     
     // Portfolio
     port_lbl: "Projeler", port_title: "Tamamlanan İşler.", port_sub: "Ölçülebilir sonuçlar.",
@@ -314,7 +314,7 @@ export const I18N = {
     faq6_q: "Çalışma modeli ve iletişim nasıl sağlanıyor?", faq6_a: "Dünya genelinde %100 uzaktan (remote) çalışıyoruz. Slack/Teams, asenkron güncellemeler ve haftalık demo toplantıları ile sürekli ve şeffaf iletişim kuruyoruz. İlk yanıtlarda 24 saat SLA'ine sadık kalıyoruz.",
     
     // Contact & CTA
-    cta_title: "Güvenle yayına çıkmaya", cta_title_em: "hazır mısınız?", cta_p: "Proje detaylarınızı iletin veya size uygun paketi seçin. 30 dakikalık keşif görüşmesi, taahhüt yok.",
+    cta_title: "Güvenle yayına çıkmaya", cta_title_em: "hazır mısınız?", cta_p: "Formu proje detaylarınla doldur veya bir paket seç. İlk yanıt {respDays} iş günü içinde verilir.",
     guar_1: "24 saat içinde yanıt", guar_2: "Global & Uzaktan Destek",
     form_type_lbl: "Proje Türü", form_type_indie: "Bireysel / Indie Proje", form_type_b2b: "Şirket / Ekip Projesi",
     form_pkg_lbl: "İlgilendiğiniz Paket", form_pkg_indie: "Indie / Bireysel", form_pkg_startup: "Startup / Ekip", form_pkg_enterprise: "Kurumsal / B2B", form_pkg_custom: "Özel Kapsam",
@@ -324,7 +324,7 @@ export const I18N = {
     contact_email_direct: "Doğrudan İletişim: hello@zeroescapes.dev",
     btn_submit: "Talebi Gönder",
     
-    footer_copy: "QA Otomasyon Mimarı · 5+ yıl · ISTQB Sertifikalı · Dünya geneli uzaktan."
+    footer_copy: "QA Automation Architect · 5+ yıl · ISTQB Certified Tester, Foundation Level · Dünya geneli uzaktan."
   },
   
   ar: {
@@ -333,11 +333,11 @@ export const I18N = {
     
     // Hero
     h1_1: "انطلق بـ", h1_2: "ثقة تامة.",
-    hp_subtitle: "أتمتة الاختبارات الشاملة، واختبارات الأداء وتكامل CI/CD.",
+    hp_subtitle: "أتمتة اختبارات شاملة وتكامل CI/CD.",
     hp_desc: "طور ميزاتك ونحن نضمن الجودة. تراجع أقل للأخطاء، وسرعة إطلاق أعلى، ونشر موثوق في بيئة الإنتاج.",
     btn_call: "احجز مكالمة", btn_work: "أعمالي",
     btn_packages: "استعراض الباقات", btn_tell_project: "أريد مناقشة مشروعي",
-    trust_line: "شريك QA معتمد من ISTQB. تم تسليم +1,500 سيناريو اختبار عالمياً.",
+    trust_line: "ISTQB Certified Tester, Foundation Level. أكثر من 1,500 سيناريو اختبار.",
     
     // Authority & ISTQB
     istqb_badge: "ISTQB Certified Tester, Foundation Level",
@@ -346,9 +346,9 @@ export const I18N = {
     // Why Zero Escapes
     why_lbl: "لماذا Zero Escapes", why_title: "الأخطاء تتوقف هنا.", why_sub: "لماذا يختارني العملاء.", why_desc: "لست مجرد مهندس QA — أنا شريك جودة استراتيجي يتعامل مع كود العميل كمنتجه الخاص.",
     w1_t: "معمار أطر العمل، لست كاتب نصوص", w1_d: "أطر عمل POM قابلة للتوسع. بناء من الصفر أو إنقاذ الأنظمة القديمة.",
-    w2_t: "خبير CI/CD — نهج Shift-Left", w2_d: "دمج الاختبارات في مسارات النشر الخاصة بك منذ اليوم الأول. يتم التحقق من كل PR.",
-    w3_t: "تغطية جودة شاملة", w3_d: "اختبار API باستخدام Postman، و E2E عبر Playwright، والموبايل عبر Appium.",
-    w4_t: "معتمد ومُدعم بالذكاء الاصطناعي", w4_d: "استخدام Claude Code و Gemini لتسريع وتيرة العمل.",
+    w2_t: "خبير CI/CD — نهج Shift-Left", w2_d: "الاختبار داخل خط الإنتاج لديك منذ البداية، فتُفحص التغييرات قبل دمجها.",
+    w3_t: "تغطية جودة شاملة", w3_d: "اختبار الـ API واختبارات E2E بـ Playwright وفحوصات توافق المتصفحات. خبرة Cypress وSelenium للمجموعات القائمة.",
+    w4_t: "ISTQB Certified Tester, Foundation Level", w4_d: "حاصل على الشهادة بمستوى Foundation. يستخدم أدوات الذكاء الاصطناعي لتسريع إنشاء الاختبارات.",
     w5_t: "متوافق مع Agile", w5_d: "اجتماعات يومية، معايير BDD/Gherkin. تتحول الاختبارات إلى توثيق حي.",
     w6_t: "تقارير جاهزة للإدارة", w6_d: "اتجاهات الأخطاء، لوحات تحكم للمهندسين والإدارة العليا عبر Allure.",
     
@@ -361,7 +361,7 @@ export const I18N = {
     
     // Packages
     pkg_lbl: "باقات الخدمات", pkg_title: "خطط جودة شفافة", pkg_sub: "مصممة للمطورين المستقلين والشركات الناشئة والمؤسسات.",
-    pkg_popular: "الأكثر طلباً", pkg_quote: "طلب عرض سعر", pkg_cta: "ابدأ الآن",
+    pkg_popular: "موصى بها", pkg_quote: "طلب عرض سعر", pkg_cta: "ابدأ الآن",
     pkg_response_time: "استجابة أولى واستكشاف خلال 24 ساعة",
     
     pkg1_name: "فردي / مستقل",
@@ -393,7 +393,7 @@ export const I18N = {
     pkg3_model: "عقد استشاري مخصص أو دوري",
     pkg3_f1: "هيكلية QA مؤسسية واستراتيجية shift-left",
     pkg3_f2: "تغطية شاملة للمتصفحات والمنصات المختلفة",
-    pkg3_f3: "اختبارات الأداء والأحمال العالية (JMeter)",
+    pkg3_f3: "تغطية متعددة المتصفحات",
     pkg3_f4: "مسارات نشر متعددة ومعقدة (GitHub Actions / Jenkins)",
     pkg3_f5: "لوحات تقارير تنفيذية للإدارة العليا",
     pkg3_f6: "اتفاقية مستوى خدمة مخصصة (SLA)",
@@ -441,8 +441,8 @@ export const I18N = {
     svc_lbl: "الخدمات", svc_title: "ماذا أقدم", svc_sub: "من البداية للنهاية.",
     svc1_t: "بناء أطر العمل QA", svc1_d: "أطر عمل مخصصة باستخدام Playwright مع تكامل CI/CD وتوثيق لتدريب الفريق.",
     svc2_t: "إنقاذ الأنظمة القديمة", svc2_d: "التدقيق، التحديث — الانتقال من Selenium غير المستقر إلى Playwright قوي.",
-    svc3_t: "أتمتة الهواتف الذكية", svc3_d: "اختبار التطبيقات على أجهزة حقيقية (iOS/Android) باستخدام Appium مع تكامل CI.",
-    svc4_t: "اختبار API", svc4_d: "ضمان موثوقية الأنظمة الخلفية عبر أجنحة مؤتمتة في مسار النشر المستمر.",
+    svc3_t: "أتمتة الهواتف الذكية", svc3_d: "أتمتة الجوال الأصلية بـ Appium، تُقدَّم بنطاق مخصص: يُحدد في مكالمة ويُسعَّر بالساعة أو بعرض.",
+    svc4_t: "اختبار API", svc4_d: "اختبارات REST بـ Playwright وفحوصات API تعمل في CI.",
     
     // Portfolio
     port_lbl: "دراسات الحالة", port_title: "أعمال تم تسليمها.", port_sub: "نتائج قابلة للقياس.",
@@ -479,7 +479,7 @@ export const I18N = {
     faq6_q: "كيف يتم نموذج العمل وتيرة التواصل؟", faq6_a: "عن بُعد بنسبة 100% عالمياً. نتواصل عبر Slack/Teams وتحديثات دورية وعروض أسبوعية. ونلتزم بالرد الأول خلال 24 ساعة.",
     
     // Contact & CTA
-    cta_title: "جاهز للانطلاق بـ", cta_title_em: "ثقة تامة؟", cta_p: "املأ النموذج بتفاصيل مشروعك أو اختر الباقة المناسبة. مكالمة استكشافية 30 دقيقة، بدون التزام.",
+    cta_title: "جاهز للانطلاق بـ", cta_title_em: "ثقة تامة؟", cta_p: "املأ النموذج بتفاصيل مشروعك أو اختر باقة. الرد الأول خلال {respDays} يوم عمل.",
     guar_1: "استجابة خلال 24 ساعة", guar_2: "عمل عن بعد عالمياً",
     form_type_lbl: "نوع المشروع", form_type_indie: "مشروع فردي / مستقل", form_type_b2b: "مشروع شركة / فريق",
     form_pkg_lbl: "الباقة المطلوبة", form_pkg_indie: "فردي / مستقل", form_pkg_startup: "الشركات الناشئة / الفرق", form_pkg_enterprise: "المؤسسات / الشركات الكبرى", form_pkg_custom: "نطاق مخصص",
@@ -489,7 +489,7 @@ export const I18N = {
     contact_email_direct: "التواصل المباشر: hello@zeroescapes.dev",
     btn_submit: "إرسال الطلب",
     
-    footer_copy: "مهندس أتمتة اختبار · +5 سنوات · معتمد ISTQB · عمل عن بُعد عالمياً."
+    footer_copy: "QA Automation Architect · +5 سنوات · ISTQB Certified Tester, Foundation Level · عن بُعد حول العالم."
   }
 }
 
